@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<script type="text/javascript">
+
+dataLayer.push({
+  'ecommerce': {
+    'currencyCode': 'EUR',                       // Local currency is optional.
+    'impressions': [
+     {
+       'name': 'Triblend Android T-Shirt',       // Name or ID is required.
+       'id': '12345',
+       'price': '15.25',
+       'brand': 'Google',
+       'category': 'Apparel',
+       'variant': 'Gray',
+       'list': 'Search Results',
+       'position': 1
+     },
+     {
+       'name': 'Donut Friday Scented T-Shirt',
+       'id': '67890',
+       'price': '33.75',
+       'brand': 'Google',
+       'category': 'Apparel',
+       'variant': 'Black',
+       'list': 'Search Results',
+       'position': 2
+     }]
+  }
+});
+</script>
+
+	<link rel="shortcut icon" href="#">
+  <title>Datalayers Builder -Easily create website, Android and iOS tagging codes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- Head -> Activate from settings json theme -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N8G6RKF');</script>
+    <!-- End Google Tag Manager -->
+	
+	
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/collapsiblestyles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/beautify.js"></script>
+  <script src="./js/beautify-css.js"></script>
+  <script src="./js/beautify-html.js"></script>
+
+<script>
+    dataLayer.push({
+    "event":"event1",
+    "variable1":"someVAlue",
+    "variable2":"someothervalue"
+})
+</script>
+  
+</head>
+<body>
+<header>	
+<h1 style="margin: 2px 0px 0px 0px;padding-bottom: 12px;text-align: -webkit-center;padding-top: 6px;">Datalayers BUILDER</h1>
+<div>
+<select id ="masterdropdown" name="dropdown" style="display: none;">
+	<option value='google'>Google Analytics</option>
+	<option value="adobe">Adobe Analytics</option>
+   </select> 
+</div>
+<div >
+	<button onclick="window.location.href='index.html';">Home</button>
+	<button onclick="window.location.href='support/eventypes.html';">Supported events</button>
+	<button onclick="window.location.href='datalayerbuilder.html';">Datalayer Builder</button>
+	<button onclick="window.location.href='faq.html';">FAQs</button>
+	<button onclick="window.location.href='feedback.html';">Feedback</button>
+	<button onclick="window.location.href='https://github.com/Anuj20/DatalayerHelper';">Github project</button>
+</div>
+</header>
+<hr class="solid" style="border-top: 2px solid rgb(0, 0, 0);margin-top: 0px;margin-bottom: 0px;">
+
+
+
+<div id="bodycontainer" class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+
+
+  <div id="webtagging" class="">
+
+  <!-- DataLayer options container -->  
+  <div class="row">
+
+    <div class="col-6">
+
+      <p style="display: inline">To get started, please choose the data layer type: </p>
+      <select id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
+        <option value='select'>Select Data Layer Type</option>
+        <option value='declare'>Datalayer Declaration</option>
+        <option value='push'>Datalayer Push</option>
+        <option value='ecomm'>Shopify Ecommerce</option>
+      </select> 
+
+    </div>
+
+    <div class="col-3">
+
+      <label 
+        id="dlLabel" 
+        style="visibility: hidden;" 
+        for="dlName">
+          DataLayer Name:
+      </label>
+      
+      <input 
+        type="text" 
+        style="visibility: hidden;" 
+        placeholder="Default dataLayer" 
+        name="dlName" 
+        value="dataLayer" 
+        id="dlName" >
+
+    </div>
+  
+    <div class="col-3">
+      <button id="clearall" onclick="clearall()" style="border:1px solid;float:right;border-radius:5px">Clear All</button>
+    </div>
+
+  </div> 
+  
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-6">
+
+        <div class="container" id="MainContainer"></div>
+
+        <div class="container" id="EcommContainer"></div>
+
+        <div id="error" class="container"></div>
+
+        <div id="divfunctionButtons" class="container">
+          <button type="button" id="addMore" class="addMore datadeclare" style="display: inline;visibility:hidden">+ Add another</button>
+          <button type="button" id="dataGenerate" onclick="generateCode()" style="display: inline;margin-top:8px;margin-bottom:8px;visibility:hidden">Generate</button>
+        </div>
+
+      </div>
+
+
+      <div class="col-6">
+
+        <div> 
+          <textarea id="taggingcode" name="taggingcode" rows="4" cols="50" readonly="readonly" style="border-color:coral;border: 2px solid; border-radius: 10px;padding: 4px; height: auto;visibility:hidden;width:100%;	word-wrap: break-word">
+          Here goes the tagging code
+          </textarea>
+          <Button id="copyToClipboard" onclick="copyToClipboard()" style="visibility:hidden;width: 100%;"><b>Copy to clipboard</b></button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
+
+  <table id="headerTable" style="display:none">
+  </table>
+  <h4 id="titlePastcodes">Previous codes
+  <img src="Images/excel.png" style="float: right;height: 30px;margin-right: 8px;" onclick="createExportTable()">
+  </h4>
+  <div id="PastCodes" class="container-fluid">
+    <div id="pastCode" class="container-fluid pastCode">
+    <button type="button" class="collapsible">
+      <p class="pcbuttonId" style="display: none;">1</p>
+      <img class="pcbuttonImg" src="Images/web.png" style="height: 30px; width: 30px;margin-right: 4px;" alt="icon"/>
+      <b class="pcbuttonText">Open Section 1</b>
+      <span class="close" style="float: left;margin-right: 8px;" onclick="deleteData(this)">
+        <img src="Images/del.png" style="width: 30px; height: 30px;"></span>
+      <span class="arrow" style="float: right;"></span>
+      
+    </button>
+    <div class="content">
+      <textarea class="pccontextText" name="taggingcode" rows="1" cols="50" readonly="readonly">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </textarea>
+      <button class="copyToClipboard" onclick="copyToClipboard(this)">Copy to clipboard</button>
+    </div>
+  </div>
+    
+  </div>
+
+  <div id="adobeobj" class="container-fluid datalayer adobeobj" style="padding: 0 2px 2px 0;display: none;">
+    <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
+      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;border: 1px solid">
+      <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+      <div style="display: inline;border: 1px solid;width:50%" class="parinputvalue">
+      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="border:none;display: inline;max-width:85%">
+      <span class="nestedparam" onclick="nestedparams(this)" style="display: inline;padding:4px; background-color: #efefef; float:rightwards">+ Nested</span>
+    </div>
+      <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.jpg" alt="remove row" style="visibility:hidden;height: fit-content;padding-left: 6px;">
+      <br>	
+      <div class="container nestedparams" style="margin-top: 4px;  display:block;visibility:hidden;"></div>
+    </div>
+    </div>
+
+  <div id="datalayerdec" class="container-fluid datalayer datalayerdec" style="padding: 0 2px 2px 0;display: none;">
+  <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
+      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;border: 1px solid">
+    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+    <div style="display: inline;border: 1px solid;width:50%" class="parinputvalue">
+      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="border:none;display: inline;max-width:85%">
+    <span class="nestedparam" onclick="nestedparams(this)" style="display: inline;padding:4px; background-color: #efefef; float:rightwards">+ Nested</span>
+  </div>
+    <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.jpg" alt="remove row" style="visibility:hidden;height: fit-content;padding-left: 6px;">
+    <br>	
+    <div class="container nestedparams" style="margin-top: 4px;  display:block;visibility:hidden;"></div>
+  </div>
+  </div>
+
+  <div id="datalayerPush" class="container-fluid datalayer datalayerPush" style="padding: 0 2px 2px 0;display: none">
+
+  <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
+      <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
+    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
+    <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;max-width: 80%;border-radius: 8px;"></div>
+  </div>
+
+  <div id="datalayerEcomm" class="container-fluid datalayer datalayerEcomm" style="padding: 0 2px 2px 0;display: none;">
+
+  <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
+  <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline">Choose the Ecommerce Event </label>
+  <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
+  <select class="my-auto" id ="ecommdropdown" name="dropdown" onfocus="removeerrormsg()" style="margin-bottom:8px;display: inline">
+    <option value='choose'>Select</option>
+    <option value='impression'>Product Impression</option>
+    <option value='click'>Product Click</option>
+    <option value='details'>Product View</option>
+    <option value='addtocart'>Product Add to Cart</option>
+      <option value='removecart'>Remove from Cart</option>
+    <option value='checkout'>Product Checkout</option>
+    <option value='checkoutopt'>Checkout Option</option>
+      <option value='purchase'>Product Purchase</option>
+    <option value='fullrefund'>Full Refund</option>
+    <option value='partrefund'>Partial Refund</option>
+    
+  </select>
+  <input type="checkbox" id="useevent" name="Event"  style="margin-left:40px;margin-right:4px;display: inline;vertical-align:sub;visibility:hidden">
+    <label for="Useevent" style="visibility:hidden">Use Event</label><br>
+  </div>
+  </div>
+
+  <div id="datalayerecommevent" class="container-fluid datalayer datalayerecommevent" style="padding: 0 2px 2px 0;display: none;">
+  <div id="even_det" style="display: flex;">
+  <div style="height:max-content; padding-right:16px">
+  <h1>Event Details</h1>
+  </div>
+  <div style="height:max-content;margin-top:8px" >
+  <select name="configType" id="Configs" style="font-size: larger;">
+      <option value="GA4">Google Analytics 4</option>
+      <option value="UA">Universal Analytics</option>
+
+    </select>
+    </div>
+  </div>
+  <div id="divproducts" class="container divproducts" style="border:3px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
+
+  <button id="addnewproduct" style="margin:4px"> Add product</button>
+
+  <div class="container divproductparams" style="border:1px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
+  <button id="productparams" onclick="addProdParam(this)" style="display:inline-block;margin-bottom:4px">Add product parameter</button>
+  <img id="removeIcon" onclick="removeNode(this)" src="Images/close.png" alt="remove row" style="visibility:inherit;max-height:20px;max-width:20px;float: right">
+  <div class="input-group keyvalue productparams" style="padding: 0 2px 2px 0">
+  <input list="prodparams" class="form-control key" onfocus="removeerrormsg()" id="key" placeholder="Product parameter name" style="display: inline;border: 1px solid"/>
+    <datalist id="prodparams" >
+    <option>name</option>
+    <option>id</option>
+    <option>price</option>
+    <option>brand</option>
+    <option>category</option>
+    <option>variant</option>
+    <option>list</option>
+    <option>position</option>	
+    <option>coupon</option>
+    
+    
+    <option>item_id</option>
+    <option>item_name</option>
+    <option>affiliation</option>
+    <option>discount</option>
+    <option>index</option>
+    <option>item_brand</option>
+    <option>item_category</option>
+    <option>item_category2</option>
+    <option>item_category3</option>
+    <option>item_category4</option>
+    <option>item_category5</option>
+    <option>item_list_id</option>
+    <option>item_list_name</option>
+    <option>item_variant</option>
+    <option>location_id</option>
+    <option>price</option>
+    <option>quantity</option>
+    </datalist>
+    
+    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Product parameter Value" style="display: inline;border: 1px solid">
+    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
+  </div>
+  </div>
+  </div>
+
+  <div id="diveventparams" class="container" style="border:3px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
+  <button id="eventparams" style="display:inline;margin-bottom:4px">Add event parameter</button>
+  <p style="display: inline;">[optional]</p>
+  <div class="input-group keyvalue eventparams" style="padding: 0 2px 2px 0">
+      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Parameter name" style="display: inline;border: 1px solid">
+    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Paramater Value" style="display: inline;border: 1px solid">
+    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
+  </div>
+
+  </div>
+
+  <div id="divactionfieldparams" class="container" style="border:3px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
+  <button id="actionfieldparams" style="display:block;margin-bottom:4px">Add action field</button>
+  <div class="input-group keyvalue actionfieldparams" style="padding: 0 2px 2px 0">
+  <input list="afparams" type="text" class="form-control key" placeholder="Action field Name" id="key" onfocus="removeerrormsg()" style="display: inline;border: 1px solid"/>
+    <datalist id="afparams">
+    <option>list</option>
+    <option>step</option>
+    <option>option</option>
+    <option>id</option>
+    <option>affiliation</option>
+    <option>revenue</option>
+    <option>tax</option>
+      <option>shipping</option>	
+    <option>coupon</option>	
+    </datalist>
+    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Action field Value" style="display: inline;border: 1px solid">
+    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
+  </div>
+  </div>
+
+
+  </div>
+
+  <div id="androidEvent" class="container-fluid android androidEvent" style="padding: 0 2px 2px 0;display: none">
+
+    <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
+      <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
+      <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
+      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;max-width: 80%;border-radius: 8px;"></div>
+    </div>
+
+  <div id="iOSEvent" class="container-fluid iOS iOSEvent" style="padding: 0 2px 2px 0;display: none">
+
+    <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
+      <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
+      <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
+      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;max-width: 80%;border-radius: 8px;"></div>
+    </div>
+
+  <div class="input-group keyvaluenested" style="padding: 0 2px 2px 0;visibility: hidden;">
+      <input type="text" class="form-control keynested" id="keynested" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;border-radius: 8px;border: 1px solid">
+    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
+    <input type="text" class="form-control valuenested" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;border-radius: 8px;">
+    <img id="addrow" class="my-auto" onclick="addNode(this)" src="Images/open.png" alt="remove row" style="visibility:inherit;width:20px;height: 20px;background-color:darkolivegreen;display:inline;margin-left: 8px;">
+    <img id="removerow" class="my-auto" onclick="removeNode(this)" src="Images/remove.png" alt="remove row" style="visibility:inherit;width:20px;height:5px;background-color:darkred;display: inline;margin-left: 8px;">
+  </div>
+  </div>
+</div>
+
+<script src="./js/Database.js"></script>
+<script src="./js/datalayerhelper.js"></script>
+
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website&amp;utm_content=footer_img"><img src="../cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(t){for(var e=t+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(e))return i.substring(e.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var wordpressAdminBody=document.getElementsByClassName("wp-admin")[0],notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0];if(null!=wordpressAdminBody&¬ification.length>0&&null!=mainContent && new Date().toISOString().slice(0, 10) > '2023-10-29' && new Date().toISOString().slice(0, 10) < '2023-11-27'){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 100%; }} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); max-width: 350px; border: 0; border-radius: 3px; background-color: #ff4546 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&amp;utm_medium=panel&amp;utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">Claim deal</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"),notification.className="notice notice-error is-dismissible";var mainContentHolder=document.getElementById("main_content");mainContentHolder.setAttribute("style","padding: 0;"),hostingerLogo[0].remove();var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.className="000-h1",h1Tag.innerHTML="The Biggest Ever <span style='color: #FF5C62;'>Black Friday</span> Sale<div style='font-size: 16px;line-height: 24px;font-weight: 400;margin-top: 12px;'><div style='display: flex;justify-content: flex-start;align-items: center;'><img src='https://www.000webhost.com/static/default.000webhost.com/images/generic/green-check-mark.png' alt='' style='margin-right: 10px; width: 20px;'>Managed WordPress Hosting</div><div style='display: flex;justify-content: flex-start;align-items: center;'><img src='https://www.000webhost.com/static/default.000webhost.com/images/generic/green-check-mark.png' alt='' style='margin-right: 10px; width: 20px;'>WordPress Acceleration</div><div style='display: flex;justify-content: flex-start;align-items: center;'><img src='https://www.000webhost.com/static/default.000webhost.com/images/generic/green-check-mark.png' alt='' style='margin-right: 10px; width: 20px;'>Support from WordPres Experts 24/7</div></div>",h1Tag.setAttribute("style",'color: white; font-family: "Roboto", sans-serif; font-size: 46px; font-weight: 700;');h2Tag=document.createElement("H2");h2Tag.innerHTML="<span style='font-size: 20px'>$</span>2.49<span style='font-size: 20px'>/mo</span>",h2Tag.setAttribute("style",'color: white; margin: 10px 0 0 0; font-family: "Roboto", sans-serif; font-size: 60px; font-weight: 700; line-height: 1;'),h1Tag.parentNode.insertBefore(h2Tag,h1Tag.nextSibling);var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="<span style='text-decoration:line-through; font-size: 14px; color:#727586'>$11.99.mo</span><br>+ 2 Months Free",paragraph.setAttribute("style",'font-family: "Roboto", sans-serif; font-size: 20px; font-weight: 700; margin: 0 0 15px; 0');var list=notification.getElementsByTagName("UL")[0];list.remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper" style="height: 90%"><img class="web-hosting-90-off-image" src="https://www.000webhost.com/static/default.000webhost.com/images/sales/bf2023/hero.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0]}else if(null!=wordpressAdminBody&¬ification.length>0&&null!=mainContent){var bulletPoints = mainContent.getElementsByTagName('li');var replacement=['Increased performance (up to 5x faster) - Thanks to Hostinger’s WordPress Acceleration and Caching solutions','WordPress AI tools - Creating a new website has never been easier','Weekly or daily backups - Your data will always be safe','Fast and dedicated 24/7 support - Ready to help you','Migration of your current WordPress sites to Hostinger is automatic and free!','Try Premium Web Hosting now - starting from $1.99/mo'];for (var i=0;i<bulletPoints.length;i++){bulletPoints[i].innerHTML = replacement[i];}}</script></body>
+
+</html>

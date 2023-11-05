@@ -1,0 +1,85 @@
+a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: purple;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  .tablinks:hover {
+    background-color: red;
+  }
+
+  header{
+    display:table;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    background-color: black;
+    
+    width: 100%;
+  }
+
+  header h1{
+    display:inline;
+    color:#1a73e8;
+    transition:0.5s;
+  }
+
+
+  header div{
+    display:table-cell;
+    text-align: right;
+    vertical-align:middle;
+  }
+
+  header button{
+   border: none; 
+   margin-right: 10px;
+    color: white;
+    transition-duration: 0.4s;
+    background-color:black;
+
+  }
+  header button:hover {
+  /*box-shadow: 0 1px 16px 0 #1a73e8, 0 17px 50px 0 #1a73e8;*/
+  color: #1a73e8; /* Green */
+  
+
+}
+
+  p,h5,h2{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding:8px;
+  }
+
+  .catchphrase{
+    background-color:white;
+    text-align: center;
+    padding: 24px;
+    color:#1a73e8;
+  }
+
+  .catchphrase:hover{
+    background-color: #1a73e8;
+    color:white;
+
+  }
