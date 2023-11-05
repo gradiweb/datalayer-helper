@@ -81,7 +81,7 @@ switch (value) {
 				document.getElementById('dataGenerate').style.visibility = "hidden";
 				document.getElementById('taggingcode').style.visibility = "hidden";
 				document.getElementById('MainContainer').innerHTML = "";
-				document.getElementById('taggingcode').innerHTML = "Here goes the tagging code";
+				document.getElementById('taggingcode').innerHTML = "DataLayer Code";
 				document.getElementById("taggingcode").style.height="auto";
 				removeerrormsg();
                 break;
@@ -168,7 +168,7 @@ function swapContent (id) {
 	//let addMore=document.getElementById('addMore');
 	dataLayer.push({"event":"pageView","pageName":id});
 	document.getElementById("copyToClipboard").style.visibility="hidden";
-	document.getElementById('taggingcode').innerHTML = "Here goes the tagging code";
+	document.getElementById('taggingcode').innerHTML = "DataLayer Code";
 	document.getElementById("taggingcode").style.height="auto";
 	document.getElementById('dataGenerate').style.visibility = "visible";
 	document.getElementById('taggingcode').style.visibility = "visible";
@@ -183,7 +183,7 @@ function swapContent (id) {
 	functionbuttondiv.insertBefore(addMore, functionbuttondiv.childNodes[0]);
 	}
 	if(id=="datalayerEcomm"){
-	//document.getElementById('taggingcode').innerHTML = "Here goes the tagging code";
+	//document.getElementById('taggingcode').innerHTML = "DataLayer Code";
 	addMore.remove();
 	document.getElementById('dataGenerate').style.visibility = "hidden";
 	document.getElementById('taggingcode').style.visibility = "hidden";
@@ -212,7 +212,7 @@ function swapContent (id) {
 document.getElementById("ecommdropdown").addEventListener("change", function(){
 var value=this.value;
 
-document.getElementById('taggingcode').innerHTML = "Here goes the tagging code";
+document.getElementById('taggingcode').innerHTML = "DataLayer Code";
 document.getElementById("taggingcode").style.height="auto";
 
 switch (value) {
@@ -389,7 +389,7 @@ buttonArray.forEach(function(elem) {
 				document.getElementById('dataGenerate').style.visibility = "hidden";
 				document.getElementById('taggingcode').style.visibility = "hidden";
 				//document.getElementById('MainContainer').innerHTML = "";
-				document.getElementById('taggingcode').innerHTML = "Here goes the tagging code";
+				document.getElementById('taggingcode').innerHTML = "DataLayer Code";
 				document.getElementById("taggingcode").style.height="auto";
 	}
 }
@@ -554,7 +554,7 @@ function clearall(){
 	for(i=0;i<inputs.length;i++){
 		inputs[i].value="";
 	}
-	document.getElementById('taggingcode').innerHTML = "Here goes the tagging code";
+	document.getElementById('taggingcode').innerHTML = "DataLayer Code";
 	document.getElementById("copyToClipboard").style.visibility="hidden";
 	document.getElementById("taggingcode").style.height="auto";
 	return;
@@ -731,7 +731,7 @@ function createExportTable(){
 
 function generateCode()
 {
-	document.getElementById('taggingcode').innerHTML = "Here goes the tagging code";
+	document.getElementById('taggingcode').innerHTML = "DataLayer Code";
 	document.getElementById("taggingcode").style.height="auto";
 	try{
 
