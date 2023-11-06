@@ -1,66 +1,135 @@
-a:link {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: purple;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
-  }
+header {
+  padding:25px 0;
+}
 
-  .tablinks:hover {
-    background-color: red;
-  }
+a {
+  text-decoration: none!important;
+  color:black!important;
+  cursor:pointer!important;
+}
 
-  header{
-    display:table;
-    padding-bottom: 12px;
-    padding-top: 12px;
-    background-color: black;
-    
-    width: 100%;
-  }
+.link:hover {
+  color:#ef8195!important;
+}
 
-  header h1{
-    display:inline;
-    color:#1a73e8;
-    transition:0.5s;
-  }
+.Logo__container {
+  position:relative;
+}
+
+.Logo {
+  position: absolute;
+  top:50%;
+  transform:translateY(-50%);
+  height: 40px;
+}
+
+.btn-container, .menu {
+  padding:20px 0;
+}
+
+.menu ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin:0;
+}
+
+.Main__Datalayer {
+ padding:5% 0; 
+}
+
+.Label{
+  margin: 10px 0;
+  padding:0;
+}
+
+.Btn__actions {
+  display:flex;
+  justify-content: space-between;
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.nestedparam {
+  border: 1px solid black;
+  display: block;
+  border-radius: 25px;
+  padding: 5px;
+  text-align: center;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.keyvaluenested {
+  margin:10px 0;
+}
+
+.product-wrapper {
+  border: 1px solid #e1e0e0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#key {
+  border-radius: 5px!important;
+}
+
+.remove_node {
+  visibility: inherit;
+  max-height: 14px;
+  max-width: 14px;
+  float: right;
+  cursor: pointer; 
+}
+
+.excel_download {
+  text-align: left;
+}
+
+#even_det {
+  margin: 15px 0;
+}
+
+#even_det h3 {
+  margin:0;
+}
 
 
-  header div{
-    display:table-cell;
-    text-align: right;
-    vertical-align:middle;
-  }
+#removeIcon {
+  cursor:pointer;
+}
 
-  header button{
-   border: none; 
-   margin-right: 10px;
-    color: white;
-    transition-duration: 0.4s;
-    background-color:black;
+.Faq_wrapper {
+  margin-bottom: 100px;
+}
 
-  }
-  header button:hover {
-  /*box-shadow: 0 1px 16px 0 #1a73e8, 0 17px 50px 0 #1a73e8;*/
-  color: #1a73e8; /* Green */
-  
 
+#taggingcode {
+  background: black;
+  color: #a9a17e;
+  padding:10px 25px;width: 100%;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn-primary-gradi {
+  color: #fff!important;
+  border-color: #ef8195;
+  background-color: #ef8195;
+  overflow: hidden;
+  padding: 10px 26px;
+  border-radius:22px;
+  text-decoration: none;
 }
 
   p,h5,h2{

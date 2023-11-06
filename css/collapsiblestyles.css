@@ -1,6 +1,6 @@
 .collapsible {
     background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -24,7 +24,8 @@
  } 
   
   .active, .collapsible:hover {
-    background-color: #1a73e8;
+    background-color: #ef8195;
+    color: white;
   }
   
   .content {
@@ -32,6 +33,14 @@
     display: none;
     overflow: hidden;
     background-color: #FFFF;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: white!important;
+    background-color: #ef8195!important;
+    box-shadow: 6px 5px 13px -4px rgba(239,129,149,0.75)!important;
+    -webkit-box-shadow: 6px 5px 13px -4px rgba(239,129,149,0.75)!important;
+    -moz-box-shadow: 6px 5px 13px -4px rgba(239,129,149,0.75)!important;
   }
 
   .content textarea {
@@ -57,16 +66,20 @@
   #pastCode{
     display: none;
     padding:0px;
-    border: 1px solid grey;
+    border: 1px solid #e4dede;
     border-radius:4px;
   }
+
   #titlePastcodes{
     text-align: center;
-    background-color: black;
-    color: white;
-    margin-top: 100px;
+    color: black;
+    margin-top: 50px 0;
     padding: 5px;
     display:none;
+  }
+
+  #titlePastcodes a {
+    font-size:16px;
   }
 
  .arrow {

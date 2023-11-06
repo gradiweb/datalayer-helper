@@ -59,6 +59,8 @@ dataLayer.push({
   <script src="./js/beautify.js"></script>
   <script src="./js/beautify-css.js"></script>
   <script src="./js/beautify-html.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 <script>
     dataLayer.push({
@@ -69,40 +71,86 @@ dataLayer.push({
 </script>
   
 </head>
+
 <body>
-<header>	
-<h1 style="margin: 2px 0px 0px 0px;padding-bottom: 12px;text-align: -webkit-center;padding-top: 6px;">Datalayers BUILDER</h1>
-<div>
-<select id ="masterdropdown" name="dropdown" style="display: none;">
-	<option value='google'>Google Analytics</option>
-	<option value="adobe">Adobe Analytics</option>
-   </select> 
-</div>
-<div >
-	<button onclick="window.location.href='index.html';">Home</button>
-	<button onclick="window.location.href='support/eventypes.html';">Supported events</button>
-	<button onclick="window.location.href='datalayerbuilder.html';">Datalayer Builder</button>
-	<button onclick="window.location.href='faq.html';">FAQs</button>
-	<button onclick="window.location.href='feedback.html';">Feedback</button>
-	<button onclick="window.location.href='https://github.com/Anuj20/DatalayerHelper';">Github project</button>
-</div>
-</header>
-<hr class="solid" style="border-top: 2px solid rgb(0, 0, 0);margin-top: 0px;margin-bottom: 0px;">
+
+  <header class="container">	
+
+    <div class="row">
+
+      <div class="col-3 Logo__container">
+
+        <a href="https://www.gradiweb.com/">
+
+          <img 
+            src="./Images/gradiweb-logo.svg" 
+            alt="Logo"
+            class="Logo">
+
+        </a>
+
+        
+      </div>
+
+      <div class="col-6">
+
+        <nav class="menu">
+
+          <ul>
+
+            <li>
+              <a class="link" href="https://www.gradiweb.com/boutiques-shopify/">
+                Boutiques Shopify
+              </a>
+              
+            </li>
+            <li>
+              <a class="link" href="https://www.gradiweb.com/maintenance-evolutive-shopify/">
+                Maintenance Shopify
+              </a>
+              
+            </li>
+            <li>
+              <a class="link" href="https://www.gradiweb.com/developpement-applications-shopify-custom/">
+                Applications Shopify
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+      </div>
+
+      <div class="col-3 btn-container">
+
+        <a class="btn-primary-gradi" href="https://www.gradiweb.com/contact/">
+          Demander un deviz
+        </a>
+
+      </div>
 
 
+    </div>
 
-<div id="bodycontainer" class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+  </header>
+
+<div id="bodycontainer" class="container">
 
 
   <div id="webtagging" class="">
 
   <!-- DataLayer options container -->  
-  <div class="row">
+  <div class="row Main__Datalayer">
+
+    <h1>
+      Graditools: DataLayer Builder
+    </h1>
 
     <div class="col-6">
 
-      <p style="display: inline">To get started, please choose the data layer type: </p>
-      <select id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
+      <p class="Label">To get started, please choose the data layer type: </p>
+      <select class="form-select selector" id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
         <option value='select'>Select Data Layer Type</option>
         <option value='declare'>Datalayer Declaration</option>
         <option value='push'>Datalayer Push</option>
@@ -111,9 +159,10 @@ dataLayer.push({
 
     </div>
 
-    <div class="col-3">
+    <div class="col-6">
 
       <label 
+        class="Label"
         id="dlLabel" 
         style="visibility: hidden;" 
         for="dlName">
@@ -121,6 +170,7 @@ dataLayer.push({
       </label>
       
       <input 
+        class="form-control"
         type="text" 
         style="visibility: hidden;" 
         placeholder="Default dataLayer" 
@@ -130,10 +180,6 @@ dataLayer.push({
 
     </div>
   
-    <div class="col-3">
-      <button id="clearall" onclick="clearall()" style="border:1px solid;float:right;border-radius:5px">Clear All</button>
-    </div>
-
   </div> 
   
   <div class="container-fluid">
@@ -148,9 +194,22 @@ dataLayer.push({
 
         <div id="error" class="container"></div>
 
-        <div id="divfunctionButtons" class="container">
-          <button type="button" id="addMore" class="addMore datadeclare" style="display: inline;visibility:hidden">+ Add another</button>
-          <button type="button" id="dataGenerate" onclick="generateCode()" style="display: inline;margin-top:8px;margin-bottom:8px;visibility:hidden">Generate</button>
+        <div id="divfunctionButtons" class="p-2">
+          <button 
+            type="button" 
+            id="addMore" 
+            class="addMore datadeclare btn-primary-gradi" 
+            style="display: inline;visibility:hidden">
+            + Add another
+          </button>
+          <button 
+            type="button" 
+            id="dataGenerate" 
+            class="btn-primary-gradi"
+            onclick="generateCode()" 
+            style="display: inline;visibility:hidden">
+            Generate
+          </button>
         </div>
 
       </div>
@@ -159,11 +218,32 @@ dataLayer.push({
       <div class="col-6">
 
         <div> 
-          <textarea id="taggingcode" name="taggingcode" rows="4" cols="50" readonly="readonly" style="border-color:coral;border: 2px solid; border-radius: 10px;padding: 4px; height: auto;visibility:hidden;width:100%;	word-wrap: break-word">
-          Here goes the tagging code
+          <textarea id="taggingcode" name="taggingcode" rows="10" cols="45" readonly="readonly" style="visibility:hidden;">
+            DataLayer Code
           </textarea>
-          <Button id="copyToClipboard" onclick="copyToClipboard()" style="visibility:hidden;width: 100%;"><b>Copy to clipboard</b></button>
-        </div>
+          
+          <div class="Btn__actions">
+
+            <button 
+              class="btn-primary-gradi"
+              id="clearall" 
+              onclick="clearall()"
+              style="visibility:hidden;"">
+                Clear All
+            </button>
+
+            <button 
+              class="btn-primary-gradi"
+              id="copyToClipboard" 
+              onclick="copyToClipboard()" 
+              style="visibility:hidden;">
+                <b>Copy to clipboard</b>
+            </button>
+
+          </div>
+        
+        
+          </div>
 
       </div>
 
@@ -175,17 +255,18 @@ dataLayer.push({
 
   <table id="headerTable" style="display:none">
   </table>
-  <h4 id="titlePastcodes">Previous codes
-  <img src="Images/excel.png" style="float: right;height: 30px;margin-right: 8px;" onclick="createExportTable()">
-  </h4>
+  <h4 id="titlePastcodes"></h4>
+  <div class="excel_download">
+    <a class="nestedparam" href="" onclick="createExportTable()">Download Excel</a>
+  </div>
+
   <div id="PastCodes" class="container-fluid">
     <div id="pastCode" class="container-fluid pastCode">
     <button type="button" class="collapsible">
       <p class="pcbuttonId" style="display: none;">1</p>
-      <img class="pcbuttonImg" src="Images/web.png" style="height: 30px; width: 30px;margin-right: 4px;" alt="icon"/>
       <b class="pcbuttonText">Open Section 1</b>
       <span class="close" style="float: left;margin-right: 8px;" onclick="deleteData(this)">
-        <img src="Images/del.png" style="width: 30px; height: 30px;"></span>
+        <img src="Images/del.png" style="width: 20px; height: 20px;"></span>
       <span class="arrow" style="float: right;"></span>
       
     </button>
@@ -199,27 +280,14 @@ dataLayer.push({
     
   </div>
 
-  <div id="adobeobj" class="container-fluid datalayer adobeobj" style="padding: 0 2px 2px 0;display: none;">
-    <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
-      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;border: 1px solid">
-      <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-      <div style="display: inline;border: 1px solid;width:50%" class="parinputvalue">
-      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="border:none;display: inline;max-width:85%">
-      <span class="nestedparam" onclick="nestedparams(this)" style="display: inline;padding:4px; background-color: #efefef; float:rightwards">+ Nested</span>
-    </div>
-      <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.jpg" alt="remove row" style="visibility:hidden;height: fit-content;padding-left: 6px;">
-      <br>	
-      <div class="container nestedparams" style="margin-top: 4px;  display:block;visibility:hidden;"></div>
-    </div>
-    </div>
 
   <div id="datalayerdec" class="container-fluid datalayer datalayerdec" style="padding: 0 2px 2px 0;display: none;">
   <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
-      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;border: 1px solid">
+      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;">
     <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-    <div style="display: inline;border: 1px solid;width:50%" class="parinputvalue">
-      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="border:none;display: inline;max-width:85%">
-    <span class="nestedparam" onclick="nestedparams(this)" style="display: inline;padding:4px; background-color: #efefef; float:rightwards">+ Nested</span>
+    <div style="display: inline;;width:50%" class="parinputvalue">
+      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="display: inline">
+    <span class="nestedparam" onclick="nestedparams(this)">+ Nested</span>
   </div>
     <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.jpg" alt="remove row" style="visibility:hidden;height: fit-content;padding-left: 6px;">
     <br>	
@@ -232,7 +300,7 @@ dataLayer.push({
   <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
       <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
     <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
-    <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;max-width: 80%;border-radius: 8px;"></div>
+    <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;;max-width: 80%;border-radius: 8px;"></div>
   </div>
 
   <div id="datalayerEcomm" class="container-fluid datalayer datalayerEcomm" style="padding: 0 2px 2px 0;display: none;">
@@ -240,7 +308,7 @@ dataLayer.push({
   <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
   <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline">Choose the Ecommerce Event </label>
   <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
-  <select class="my-auto" id ="ecommdropdown" name="dropdown" onfocus="removeerrormsg()" style="margin-bottom:8px;display: inline">
+  <select class="my-auto form-select" id ="ecommdropdown" name="dropdown" onfocus="removeerrormsg()">
     <option value='choose'>Select</option>
     <option value='impression'>Product Impression</option>
     <option value='click'>Product Click</option>
@@ -262,79 +330,102 @@ dataLayer.push({
   <div id="datalayerecommevent" class="container-fluid datalayer datalayerecommevent" style="padding: 0 2px 2px 0;display: none;">
   <div id="even_det" style="display: flex;">
   <div style="height:max-content; padding-right:16px">
-  <h1>Event Details</h1>
+  <h3>Event Details</h3>
   </div>
   <div style="height:max-content;margin-top:8px" >
-  <select name="configType" id="Configs" style="font-size: larger;">
+  <select name="configType" id="Configs" class="form-select">
       <option value="GA4">Google Analytics 4</option>
       <option value="UA">Universal Analytics</option>
 
     </select>
     </div>
   </div>
-  <div id="divproducts" class="container divproducts" style="border:3px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
+  <div id="divproducts" class="divproducts product-wrapper">
 
-  <button id="addnewproduct" style="margin:4px"> Add product</button>
+  <button class="nestedparam" id="addnewproduct" style="margin:4px"> Add product</button>
 
-  <div class="container divproductparams" style="border:1px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
-  <button id="productparams" onclick="addProdParam(this)" style="display:inline-block;margin-bottom:4px">Add product parameter</button>
-  <img id="removeIcon" onclick="removeNode(this)" src="Images/close.png" alt="remove row" style="visibility:inherit;max-height:20px;max-width:20px;float: right">
+  <div class="divproductparams">
+  <button class="nestedparam" id="productparams" onclick="addProdParam(this)" style="display:inline-block;margin-bottom:4px">Add product parameter</button>
+  <img id="removeIcon" class="remove_node" onclick="removeNode(this)" src="Images/close.png" alt="remove row" style="visibility:inherit";>
   <div class="input-group keyvalue productparams" style="padding: 0 2px 2px 0">
-  <input list="prodparams" class="form-control key" onfocus="removeerrormsg()" id="key" placeholder="Product parameter name" style="display: inline;border: 1px solid"/>
+  <input list="prodparams" class="form-control key" onfocus="removeerrormsg()" id="key" placeholder="Product parameter name" style="display: inline;"/>
     <datalist id="prodparams" >
-    <option>name</option>
-    <option>id</option>
-    <option>price</option>
-    <option>brand</option>
-    <option>category</option>
-    <option>variant</option>
-    <option>list</option>
-    <option>position</option>	
-    <option>coupon</option>
-    
-    
-    <option>item_id</option>
-    <option>item_name</option>
-    <option>affiliation</option>
-    <option>discount</option>
-    <option>index</option>
-    <option>item_brand</option>
-    <option>item_category</option>
-    <option>item_category2</option>
-    <option>item_category3</option>
-    <option>item_category4</option>
-    <option>item_category5</option>
-    <option>item_list_id</option>
-    <option>item_list_name</option>
-    <option>item_variant</option>
-    <option>location_id</option>
-    <option>price</option>
-    <option>quantity</option>
+      
+      <option>item_id</option>
+      <option>item_name</option>
+      <option>item_price</option>
+      <option>item_brand</option>
+      <option>item_list</option>
+      <option>item_discount</option>
+      <option>item_brand</option>
+      <option>item_collection</option>
+      <option>item_collection2</option>
+      <option>item_collection3</option>
+      <option>item_collection4</option>
+      <option>item_collection5</option>
+      <option>item_created_at</option>
+      <option>item_compare_at_price</option>
+      <option>item_compare_at_price_max</option>
+      <option>item_compare_at_price_min</option>
+      <option>item_gift_card</option>
+      <option>item_handle</option>	
+      <option>item_has_only_default_variant</option>
+      <option>item_price_max</option>
+      <option>item_price_min</option>
+      <option>item_price_varies</option>
+      <option>item_tags</option>
+      <option>item_type</option>
+      <option>item_url</option>
+      <option>item_vendor</option>  
+      <option>item_quantity</option>
     </datalist>
     
     <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Product parameter Value" style="display: inline;border: 1px solid">
-    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
+      <input list="prodvalues" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Product parameter Value" style="display: inline;">
+      <datalist id="prodvalues" >
+        <option>{{product.available}}</option>
+        <option>{{product.collections}}</option>
+        <option>{{product.compare_at_price}}</option>
+        <option>{{product.compare_at_price_max}}</option>
+        <option>{{product.compare_at_price_min}}</option>
+        <option>{{product.created_at}}</option>
+        <option>{{product.gift_card?}}</option>
+        <option>{{product.handle}}</option>	
+        <option>{{product.has_only_default_variant}}</option>
+        <option>{{product.id}}</option>
+        <option>{{product.title}}</option>
+        <option>{{product.options}}</option>
+        <option>{{product.price}}</option>
+        <option>{{product.price_max}}</option>
+        <option>{{product.price_min}}</option>
+        <option>{{product.price_varies}}</option>
+        <option>{{product.tags}}</option>
+        <option>{{product.type}}</option>
+        <option>{{product.url}}</option>
+        <option>{{product.variants}}</option>
+        <option>{{product.vendor}}</option>
+      </datalist>
+      <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
   </div>
   </div>
   </div>
 
-  <div id="diveventparams" class="container" style="border:3px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
-  <button id="eventparams" style="display:inline;margin-bottom:4px">Add event parameter</button>
+  <div id="diveventparams" class="product-wrapper">
+  <button class="nestedparam" id="eventparams" style="display:inline;margin-bottom:4px">Add event parameter</button>
   <p style="display: inline;">[optional]</p>
   <div class="input-group keyvalue eventparams" style="padding: 0 2px 2px 0">
-      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Parameter name" style="display: inline;border: 1px solid">
+      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Parameter name" style="display: inline;">
     <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Paramater Value" style="display: inline;border: 1px solid">
+      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Paramater Value" style="display: inline;">
     <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
   </div>
 
   </div>
 
-  <div id="divactionfieldparams" class="container" style="border:3px solid; margin-bottom:8px;margin-left:8px;padding-left:4px;padding-top:2px">
-  <button id="actionfieldparams" style="display:block;margin-bottom:4px">Add action field</button>
+  <div id="divactionfieldparams" class="product-wrapper">
+  <button class="nestedparam" id="actionfieldparams" style="display:block">Add action field</button>
   <div class="input-group keyvalue actionfieldparams" style="padding: 0 2px 2px 0">
-  <input list="afparams" type="text" class="form-control key" placeholder="Action field Name" id="key" onfocus="removeerrormsg()" style="display: inline;border: 1px solid"/>
+  <input list="afparams" type="text" class="form-control key" placeholder="Action field Name" id="key" onfocus="removeerrormsg()" style="display: inline;"/>
     <datalist id="afparams">
     <option>list</option>
     <option>step</option>
@@ -347,7 +438,7 @@ dataLayer.push({
     <option>coupon</option>	
     </datalist>
     <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Action field Value" style="display: inline;border: 1px solid">
+      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Action field Value" style="display: inline;">
     <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
   </div>
   </div>
@@ -360,7 +451,7 @@ dataLayer.push({
     <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
       <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
       <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
-      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;max-width: 80%;border-radius: 8px;"></div>
+      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;;max-width: 80%;border-radius: 8px;"></div>
     </div>
 
   <div id="iOSEvent" class="container-fluid iOS iOSEvent" style="padding: 0 2px 2px 0;display: none">
@@ -368,22 +459,80 @@ dataLayer.push({
     <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
       <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
       <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
-      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;max-width: 80%;border-radius: 8px;"></div>
+      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;;max-width: 80%;border-radius: 8px;"></div>
     </div>
 
   <div class="input-group keyvaluenested" style="padding: 0 2px 2px 0;visibility: hidden;">
-      <input type="text" class="form-control keynested" id="keynested" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;border-radius: 8px;border: 1px solid">
-    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
-    <input type="text" class="form-control valuenested" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;border: 1px solid;border-radius: 8px;">
-    <img id="addrow" class="my-auto" onclick="addNode(this)" src="Images/open.png" alt="remove row" style="visibility:inherit;width:20px;height: 20px;background-color:darkolivegreen;display:inline;margin-left: 8px;">
-    <img id="removerow" class="my-auto" onclick="removeNode(this)" src="Images/remove.png" alt="remove row" style="visibility:inherit;width:20px;height:5px;background-color:darkred;display: inline;margin-left: 8px;">
+      <input type="text" class="form-control keynested" id="keynested" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;border-radius: 8px;">
+    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p><s></s>
+    <input type="text" class="form-control valuenested" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;;border-radius: 8px;">
+    <img id="addrow" class="my-auto" onclick="addNode(this)" src="Images/open.png" alt="remove row" style="visibility:inherit;width:12px;height: 12px;background-color:#a5e184;display:inline;margin-left: 8px;cursor:pointer;">
+    <img id="removerow" class="my-auto" onclick="removeNode(this)" src="Images/remove.png" alt="remove row" style="visibility:inherit;width:12px;height:5px;background-color:#ef8195;display: inline;margin-left: 8px;cursor:pointer;">
   </div>
   </div>
+</div>
+
+<div class="container Faq_wrapper">
+
+  <div class="row">
+
+    <div class="col-12">
+
+      <h3 class="Heading__main">FAQ</h3>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Datalayer declaration
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              It creates the datalayer code to be placed on the top of the page. All the variables under it are associated with all the events on the page. It currently supports single level of nesting within the array.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Datalayer Push
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              It is used to track specific user action/engagement and can be used multiple times on a page. It currently supports single level of nesting within the array.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Shopify Ecommerce
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Shopify Ecommerce tags are used to create all the website ecommerce datalayer events like product impression, product click, product detail view, product Add to Cart, product Remove from Cart,checkout, purchase and refund. It takes care of all the event specifications for each type of event. Below are the definitions of different level of parameters used in it:
+              <br>
+              <strong>Product level Paramaters:</strong> This is used to pass the product parameters within the event from <a href="https://shopify.dev/docs/api/liquid/objects/product">shopify product object</a>
+              <br>
+              <strong>Action field:</strong> This is used to pass list name and other ecommerce child parameters
+              <br>
+              <strong>Event level parameters:</strong> This is used to pass event level parameters(if required) with the specific event
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
 <script src="./js/Database.js"></script>
 <script src="./js/datalayerhelper.js"></script>
 
-<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website&amp;utm_content=footer_img"><img src="../cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(t){for(var e=t+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(e))return i.substring(e.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var wordpressAdminBody=document.getElementsByClassName("wp-admin")[0],notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0];if(null!=wordpressAdminBody&¬ification.length>0&&null!=mainContent && new Date().toISOString().slice(0, 10) > '2023-10-29' && new Date().toISOString().slice(0, 10) < '2023-11-27'){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 100%; }} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); max-width: 350px; border: 0; border-radius: 3px; background-color: #ff4546 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&amp;utm_medium=panel&amp;utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">Claim deal</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"),notification.className="notice notice-error is-dismissible";var mainContentHolder=document.getElementById("main_content");mainContentHolder.setAttribute("style","padding: 0;"),hostingerLogo[0].remove();var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.className="000-h1",h1Tag.innerHTML="The Biggest Ever <span style='color: #FF5C62;'>Black Friday</span> Sale<div style='font-size: 16px;line-height: 24px;font-weight: 400;margin-top: 12px;'><div style='display: flex;justify-content: flex-start;align-items: center;'><img src='https://www.000webhost.com/static/default.000webhost.com/images/generic/green-check-mark.png' alt='' style='margin-right: 10px; width: 20px;'>Managed WordPress Hosting</div><div style='display: flex;justify-content: flex-start;align-items: center;'><img src='https://www.000webhost.com/static/default.000webhost.com/images/generic/green-check-mark.png' alt='' style='margin-right: 10px; width: 20px;'>WordPress Acceleration</div><div style='display: flex;justify-content: flex-start;align-items: center;'><img src='https://www.000webhost.com/static/default.000webhost.com/images/generic/green-check-mark.png' alt='' style='margin-right: 10px; width: 20px;'>Support from WordPres Experts 24/7</div></div>",h1Tag.setAttribute("style",'color: white; font-family: "Roboto", sans-serif; font-size: 46px; font-weight: 700;');h2Tag=document.createElement("H2");h2Tag.innerHTML="<span style='font-size: 20px'>$</span>2.49<span style='font-size: 20px'>/mo</span>",h2Tag.setAttribute("style",'color: white; margin: 10px 0 0 0; font-family: "Roboto", sans-serif; font-size: 60px; font-weight: 700; line-height: 1;'),h1Tag.parentNode.insertBefore(h2Tag,h1Tag.nextSibling);var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="<span style='text-decoration:line-through; font-size: 14px; color:#727586'>$11.99.mo</span><br>+ 2 Months Free",paragraph.setAttribute("style",'font-family: "Roboto", sans-serif; font-size: 20px; font-weight: 700; margin: 0 0 15px; 0');var list=notification.getElementsByTagName("UL")[0];list.remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper" style="height: 90%"><img class="web-hosting-90-off-image" src="https://www.000webhost.com/static/default.000webhost.com/images/sales/bf2023/hero.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0]}else if(null!=wordpressAdminBody&¬ification.length>0&&null!=mainContent){var bulletPoints = mainContent.getElementsByTagName('li');var replacement=['Increased performance (up to 5x faster) - Thanks to Hostinger’s WordPress Acceleration and Caching solutions','WordPress AI tools - Creating a new website has never been easier','Weekly or daily backups - Your data will always be safe','Fast and dedicated 24/7 support - Ready to help you','Migration of your current WordPress sites to Hostinger is automatic and free!','Try Premium Web Hosting now - starting from $1.99/mo'];for (var i=0;i<bulletPoints.length;i++){bulletPoints[i].innerHTML = replacement[i];}}</script></body>
 
 </html>
