@@ -119,7 +119,7 @@ function measurementChange(){
         }
      }
      else if(option=="GA4"){
-            arr=["item_id","item_name","affiliation","discount","index","item_brand","item_category","item_category2","item_category3","item_category4","item_category5","item_list_id","item_list_name","item_variant","location_id","price","quantity"];
+            arr=["item_id","item_name","item_price","item_brand","item_list","item_discount","item_collection","item_collection2","item_collection3","item_collection4","item_collection5","item_created_at","item_compare_at_price","item_compare_at_price_max","item_compare_at_price_min","item_gift_card","item_handle","item_has_only_default_variant","item_price_max","item_price_min","item_price_varies","item_tags","item_type","item_url","item_vendor","item_quantity"];
          for(i=0;i<arr.length;i++){
             const para = document.createElement("option");
             para.innerText = arr[i];
@@ -220,13 +220,13 @@ switch (value) {
 				//document.getElementById("useevent").style.visibility="visible";
 				appendContent ("datalayerecommevent","impression");
 				ecomevent="impressions";
-				eventName="pr-impression";
+				eventName="product-impression";
                 break;
             case 'click':
 				document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","click");
 			   ecomevent="click";
-			   eventName="pr-productClick";
+			   eventName="product-productClick";
                 break;
 			case 'choose':
 				appendContent ("datalayerecommevent","choose");
@@ -237,50 +237,50 @@ switch (value) {
                //document.getElementById("useevent").style.visibility="visible";
 			   appendContent ("datalayerecommevent","detail");
 			   ecomevent="detail";
-			   eventName="pr-details";
+			   eventName="product-details";
 			   break;
 			case 'addtocart':
 				document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","add");
 			   ecomevent="add";
-			   eventName="pr-addtoCart";
+			   eventName="product-addtoCart";
                 break;
 			case 'removecart':
 				document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","remove");
 			   ecomevent="remove";
-			   eventName="pr-removefromCart";
+			   eventName="product-removefromCart";
                 break;
 				
 			case 'checkout':
 			document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","checkout");
 			   ecomevent="checkout";
-			   eventName="pr-checkout";
+			   eventName="product-checkout";
                 break;
 			case 'checkoutopt':
 			document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","checkoutopt");
 			   ecomevent="checkout_option";
-			   eventName="pr-checkout_option";
+			   eventName="product-checkout_option";
                 break;
 			case 'purchase':
 			   document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","purchase");
 			   ecomevent="purchase";
-			   eventName="pr-purchase";
+			   eventName="product-purchase";
                 break;
 			case 'fullrefund':
 			   document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","fullrefund");
 			   ecomevent="refund";
-			   eventName="pr-refund";
+			   eventName="product-refund";
                 break;
 			case 'partrefund':
 			   document.getElementById("useevent").style.visibility="hidden";
                appendContent ("datalayerecommevent","partrefund");
 			   ecomevent="refund";
-			   eventName="pr-refund";
+			   eventName="product-refund";
 			   //partrefund=true;
                 break;
 
@@ -488,9 +488,9 @@ addmore.addEventListener("click", function newRow(){
 
 	removeicon.setAttribute("class","my-auto");
 	removeicon.setAttribute("id","removeIcon");
-	removeicon.src="Images\/images.jpg";
+	removeicon.src="Images\/images.png";
 	removeicon.setAttribute("alt","remove row");
-	removeicon.setAttribute("style","visibility:inherit;height: fit-content;padding-left: 6px");
+	removeicon.setAttribute("style","visibility:inherit;height: 17px;width: 23px;padding-left: 6px");
 	removeicon.onclick = function() {
     this.parentElement.remove();
 	}
@@ -653,7 +653,7 @@ function fnExcelReport()
 {
 
 	var table=document.getElementsByTagName("table")[0];
-    var tab_text="<table border='2px'><tr style='background-color: #ef8195;color: white;'><th>Name</th><th>code</th><th>Comments</th></tr>";
+    var tab_text="<table border='2px'><tr>Datalayer Helper - Gradiweb</tr><tr style='background-color: #ef8195;color: white;'><th>Name</th><th>dataLayer</th><th>Comments</th></tr>";
     var textRange; var j=0;
     tab = document.getElementById('headerTable'); // id of table
 
@@ -696,6 +696,7 @@ function fnExcelReport()
 }
 
 function createExportTable(){
+
 	var table=document.getElementsByTagName("table")[0];
 
 	var temp=document.getElementsByClassName("pastCode");

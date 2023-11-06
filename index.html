@@ -144,7 +144,7 @@ dataLayer.push({
   <div class="row Main__Datalayer">
 
     <h1>
-      Graditools: DataLayer Builder
+      Graditools: DataLayer Helper
     </h1>
 
     <div class="col-6">
@@ -229,7 +229,7 @@ dataLayer.push({
               id="clearall" 
               onclick="clearall()"
               style="visibility:hidden;"">
-                Clear All
+                Clear
             </button>
 
             <button 
@@ -237,7 +237,7 @@ dataLayer.push({
               id="copyToClipboard" 
               onclick="copyToClipboard()" 
               style="visibility:hidden;">
-                <b>Copy to clipboard</b>
+                <b>Copy DataLayer</b>
             </button>
 
           </div>
@@ -289,7 +289,7 @@ dataLayer.push({
       <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="display: inline">
     <span class="nestedparam" onclick="nestedparams(this)">+ Nested</span>
   </div>
-    <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.jpg" alt="remove row" style="visibility:hidden;height: fit-content;padding-left: 6px;">
+    <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.png" alt="remove row" style="visibility:hidden;height: 17px;width: 23px;padding-left: 6px;">
     <br>	
     <div class="container nestedparams" style="margin-top: 4px;  display:block;visibility:hidden;"></div>
   </div>
@@ -351,10 +351,18 @@ dataLayer.push({
   <input list="prodparams" class="form-control key" onfocus="removeerrormsg()" id="key" placeholder="Product parameter name" style="display: inline;"/>
     <datalist id="prodparams" >
       
+      <option>name</option>
+      <option>id</option>
+      <option>price</option>
+      <option>brand</option>
+      <option>collection</option>
+      <option>variant</option>
+      <option>list</option>
+      <option>position</option>
+      <option>coupon</option>
       <option>item_id</option>
       <option>item_name</option>
       <option>item_price</option>
-      <option>item_brand</option>
       <option>item_list</option>
       <option>item_discount</option>
       <option>item_brand</option>
@@ -405,7 +413,7 @@ dataLayer.push({
         <option>{{product.variants}}</option>
         <option>{{product.vendor}}</option>
       </datalist>
-      <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
+      <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
   </div>
   </div>
   </div>
@@ -417,7 +425,7 @@ dataLayer.push({
       <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Parameter name" style="display: inline;">
     <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
       <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Paramater Value" style="display: inline;">
-    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
+    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
   </div>
 
   </div>
@@ -439,7 +447,7 @@ dataLayer.push({
     </datalist>
     <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
       <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Action field Value" style="display: inline;">
-    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.jpg" alt="remove row" style="visibility:inherit;height: fit-content;padding-left: 6px;">
+    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
   </div>
   </div>
 
@@ -481,18 +489,21 @@ dataLayer.push({
       <h3 class="Heading__main">FAQ</h3>
 
       <div class="accordion" id="accordionExample">
+        
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Datalayer declaration
+              What is Datalayer?
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              It creates the datalayer code to be placed on the top of the page. All the variables under it are associated with all the events on the page. It currently supports single level of nesting within the array.
+              The data layer is an object used by Google Tag Manager and gtag.js to pass information to tags. Events or variables can be passed via the data layer, and triggers can be set up based on the values of variables.
+              For more information please visit <a href="https://developers.google.com/tag-platform/tag-manager/datalayer">Google tag manager datalayer reference</a>            
             </div>
           </div>
         </div>
+
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -505,6 +516,7 @@ dataLayer.push({
             </div>
           </div>
         </div>
+
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -521,6 +533,19 @@ dataLayer.push({
               <br>
               <strong>Event level parameters:</strong> This is used to pass event level parameters(if required) with the specific event
             </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Datalayer declaration
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              It creates the datalayer code to be placed on the top of the page. All the variables under it are associated with all the events on the page. It currently supports single level of nesting within the array.
+            </div> 
           </div>
         </div>
       </div>
