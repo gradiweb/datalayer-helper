@@ -456,19 +456,17 @@ addmore.addEventListener("click", function newRow(){
 	inputkey.setAttribute("class", "form-control key");
 	inputkey.setAttribute("id", "key");
 	inputkey.setAttribute("placeholder", "Key");
-	inputkey.setAttribute("style", "display: inline;border: 1px solid");
+	inputkey.setAttribute("style", "display: inline");
 	inputkey.setAttribute("onfocus","removeerrormsg()");
 
-	parinputdiv.setAttribute("style","display: inline;border: 1px solid;width:50%");
+	parinputdiv.setAttribute("style","display: inline;width:50%");
 	parinputdiv.setAttribute( "class","parinputvalue");
 	
 	inputvalue.setAttribute("type", "text");	
 	inputvalue.setAttribute("class", "form-control value");
 	inputvalue.setAttribute("onfocus","removeerrormsg()");
 	inputvalue.setAttribute("id","value");
-	inputvalue.setAttribute("placeholder", "Value");
-	inputvalue.setAttribute("style", "border:none;display: inline;max-width:85%");
-	
+	inputvalue.setAttribute("placeholder", "Value");	
 
 	parinputdiv.appendChild(inputvalue);
 
@@ -478,7 +476,6 @@ addmore.addEventListener("click", function newRow(){
 		
 	span.setAttribute("class","nestedparam");
 	span.setAttribute( "onclick","nestedparams(this)");
-	span.setAttribute("style","display: inline;padding:4px; background-color: #efefef; float:rightwards");
 	span.innerHTML="+ Nested";
 	parinputdiv.appendChild(span);
 	}
@@ -648,7 +645,7 @@ function removeerrormsg() {
 function ErrorMsg(msg){
 	var error = document.getElementById("error");
 		//error msg
-		error.innerHTML = "<span id='errormsg' style='color: red;background-color: #e7c3c3;padding: 2px;'>"+msg 
+		error.innerHTML = "<span id='errormsg' style='color: red;padding: 2px;'>"+msg 
                         +"</span>"	
 }
 
@@ -656,7 +653,7 @@ function fnExcelReport()
 {
 
 	var table=document.getElementsByTagName("table")[0];
-    var tab_text="<table border='2px'><tr style='background-color: #1a73e8;color: white;'><th>Name</th><th>code</th><th>Remarks</th></tr>";
+    var tab_text="<table border='2px'><tr style='background-color: #ef8195;color: white;'><th>Name</th><th>code</th><th>Comments</th></tr>";
     var textRange; var j=0;
     tab = document.getElementById('headerTable'); // id of table
 
@@ -941,6 +938,9 @@ else if(temp.id=="datalayerEcomm")
 		//document.getElementById("jsbeautfier").style.visibility="visible";
 		//var code=dlname+"="+"[{"+JSON.stringify(dataLayer).replace(/{|}|\]|\[/g,'')+"}];";
 		document.getElementById("copyToClipboard").style.visibility="visible";
+    document.getElementById("clearall").style.visibility="visible";
+
+    
 		var code=dlname+"="+JSON.stringify(dataLayer);
 		//var beautify=js_beautify(code);
 	//document.getElementById("taggingcode").innerHTML=;
@@ -949,6 +949,7 @@ else if(temp.id=="datalayerEcomm")
 		//document.getElementById("jsbeautfier").style.visibility="visible";
 		//var code=dlname+".push"+"({"+JSON.stringify(dataLayer).replace(/{|}|\]|\[/g,'')+"});"
 		document.getElementById("copyToClipboard").style.visibility="visible";
+    document.getElementById("clearall").style.visibility="visible";
 		var code=dlname+".push"+"("+JSON.stringify(dataLayer).replace(/\]|\[/g,'')+")";
 	//document.getElementById("taggingcode").innerHTML=;
 		//var beautify=js_beautify(code);	
@@ -958,6 +959,8 @@ else if(temp.id=="datalayerEcomm")
 	else if(temp.className.indexOf("datalayerEcomm")>-1){
 	//document.getElementById("jsbeautfier").style.visibility="visible";
 	document.getElementById("copyToClipboard").style.visibility="visible";
+  document.getElementById("clearall").style.visibility="visible";
+
 	var code= dlname+".push"+"("+JSON.stringify(objtemp)+");";
 	//var beautify=js_beautify(code);
 	//document.getElementById("taggingcode").innerHTML=;	
