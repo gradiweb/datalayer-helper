@@ -52,7 +52,8 @@ dataLayer.push({
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/collapsiblestyles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+    
   <script src="./js/jquery.min.js"></script>
   <script src="./js/popper.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
@@ -61,6 +62,8 @@ dataLayer.push({
   <script src="./js/beautify-html.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js" crossorigin="anonymous"></script>    
+  
 
 <script>
     dataLayer.push({
@@ -74,385 +77,447 @@ dataLayer.push({
 
 <body>
 
-  <header class="container">	
-
-    <div class="row">
-
-      <div class="col-3 Logo__container">
-
-        <a href="https://www.gradiweb.com/">
-
-          <img 
-            src="./Images/gradiweb-logo.svg" 
-            alt="Logo"
-            class="Logo">
-
-        </a>
-
-        
-      </div>
-
-      <div class="col-6">
-
-        <nav class="menu">
-
-          <ul>
-
-            <li>
-              <a class="link" href="https://www.gradiweb.com/boutiques-shopify/">
-                Boutiques Shopify
-              </a>
-              
-            </li>
-            <li>
-              <a class="link" href="https://www.gradiweb.com/maintenance-evolutive-shopify/">
-                Maintenance Shopify
-              </a>
-              
-            </li>
-            <li>
-              <a class="link" href="https://www.gradiweb.com/developpement-applications-shopify-custom/">
-                Applications Shopify
-              </a>
-            </li>
-
-          </ul>
-
-        </nav>
-
-      </div>
-
-      <div class="col-3 btn-container">
-
-        <a class="btn-primary-gradi" href="https://www.gradiweb.com/contact/">
-          Demander un deviz
-        </a>
-
-      </div>
-
-
-    </div>
-
-  </header>
-
 <div id="bodycontainer" class="container">
-
-
-  <div id="webtagging" class="">
-
-  <!-- DataLayer options container -->  
-  <div class="row Main__Datalayer">
-
-    <h1>
-      Graditools: DataLayer Helper
-    </h1>
-
-    <div class="col-6">
-
-      <p class="Label">To get started, please choose the data layer type: </p>
-      <select class="form-select selector" id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
-        <option value='select'>Select Data Layer Type</option>
-        <option value='declare'>Datalayer Declaration</option>
-        <option value='push'>Datalayer Push</option>
-        <option value='ecomm'>Shopify Ecommerce</option>
-      </select> 
-
-    </div>
-
-    <div class="col-6">
-
-      <label 
-        class="Label"
-        id="dlLabel" 
-        style="visibility: hidden;" 
-        for="dlName">
-          DataLayer Name:
-      </label>
-      
-      <input 
-        class="form-control"
-        type="text" 
-        style="visibility: hidden;" 
-        placeholder="Default dataLayer" 
-        name="dlName" 
-        value="dataLayer" 
-        id="dlName" >
-
-    </div>
   
-  </div> 
-  
-  <div class="container-fluid">
 
+  
+  <div class="container">
+    <h1>bs-stepper</h1>
+    
+   
     <div class="row">
 
-      <div class="col-6">
+      <div class="col-md-12 mt-5">
+        
 
-        <div class="container" id="MainContainer"></div>
+        <div id="stepper1" class="bs-stepper">
 
-        <div class="container" id="EcommContainer"></div>
+          <!-- Stepper header -->
+          <div class="bs-stepper-header">
+            <div class="step" data-target="#test-l-1">
+              <button type="button" class="btn step-trigger">
+                <span class="bs-stepper-circle">1</span>
+                <span class="bs-stepper-label">First step</span>
+              </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-2">
+              <button type="button" class="btn step-trigger">
+                <span class="bs-stepper-circle">2</span>
+                <span class="bs-stepper-label">Second step</span>
+              </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-3">
+              <button type="button" class="btn step-trigger">
+                <span class="bs-stepper-circle">3</span>
+                <span class="bs-stepper-label">Third step</span>
+              </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-4">
+              <button type="button" class="btn step-trigger">
+                <span class="bs-stepper-circle">4</span>
+                <span class="bs-stepper-label">Fouht step</span>
+              </button>
+            </div>
+          </div>
+          <!-- Stepper content -->
+          <div class="bs-stepper-content">
 
-        <div id="error" class="container"></div>
+            <!-- First Step - Introduction -->
+            <div id="test-l-1" class="content">
+              <p class="text-center">Introduction</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, consectetur molestias odio earum libero repudiandae quae, reiciendis minus veniam voluptatibus, commodi accusantium obcaecati quisquam! Ab, odio. Dolor velit excepturi illum?
+                Enim, non ullam nulla sit beatae modi harum perspiciatis est temporibus porro consequatur et delectus quisquam mollitia qui similique cupiditate dolorum, dolores cum? Aspernatur vero quia quis non cum accusamus.
+                Itaque perspiciatis reprehenderit molestiae veniam nihil atque pariatur aut similique expedita cupiditate saepe accusantium et vitae nisi unde, tenetur labore blanditiis qui officiis consectetur aliquid mollitia nostrum praesentium! Deserunt, quas.
+                Eligendi facilis voluptatibus voluptatem repellat dolorem amet dicta similique autem ipsam aspernatur mollitia iure soluta excepturi impedit quos esse porro obcaecati, necessitatibus officia eius earum! Nulla minima animi nam magni!
+                Maxime saepe deserunt aliquid, voluptatibus ad repellendus consequatur quo quas, tenetur distinctio fuga at molestias obcaecati laudantium debitis? Laudantium error, eveniet doloremque quasi officia modi suscipit consectetur tempora est aperiam?
+                Asperiores, minima illo unde temporibus, molestiae eos delectus cum odio impedit beatae aperiam ducimus quos omnis placeat maiores commodi minus laboriosam velit cupiditate reiciendis nobis. Possimus quod atque nesciunt velit?
+                Vero repudiandae possimus, consequuntur aut qui sit deleniti minima odit hic. Libero quod ullam quia! Accusantium harum id totam, doloremque aperiam expedita labore. Sed libero omnis facere error! Id, libero?
+                Dignissimos dolores libero at, inventore dicta amet ratione aut assumenda voluptate, blanditiis neque? Perspiciatis corrupti minus sint, veritatis natus voluptates, illo debitis atque rem labore similique saepe voluptatem nesciunt id.
+                Sequi pariatur explicabo quia, praesentium asperiores aliquid, amet, a non nobis reiciendis obcaecati neque? Ipsa animi laboriosam voluptate eveniet ab, praesentium ea itaque! Alias rerum velit vel quis suscipit sed.
+                Eius, animi. Incidunt, assumenda provident. Laboriosam officiis, debitis minima, fugit facere provident quae aspernatur consectetur dolorum ipsa corporis harum quibusdam error nemo delectus dolore amet suscipit doloremque fugiat expedita similique!
+              </p>
+              <button 
+                class="btn-shape btn-main btn-center" 
+                onclick="stepper1.next()">
+                  Let's start
+              </button>
+            </div>
 
-        <div id="divfunctionButtons" class="p-2">
-          <button 
-            type="button" 
-            id="addMore" 
-            class="addMore datadeclare btn-primary-gradi" 
-            style="display: inline;visibility:hidden">
-            + Add another
-          </button>
-          <button 
-            type="button" 
-            id="dataGenerate" 
-            class="btn-primary-gradi"
-            onclick="generateCode()" 
-            style="display: inline;visibility:hidden">
-            Generate
-          </button>
+            <!-- Second Step - Datalayer Details -->
+            <div id="test-l-2" class="content">
+              <p class="text-center">Datalayer details</p>
+
+
+              <div class="row Main__Datalayer">
+
+                <h1>
+                  Graditools: DataLayer Helper
+                </h1>
+            
+                <div>
+            
+                  <p class="Label">To get started, please choose the data layer type: </p>
+                  <select class="form-select selector" id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
+                    <option value='select'>Select Data Layer Type</option>
+                    <option value='declare'>Datalayer Declaration</option>
+                    <option value='push'>Datalayer Push</option>
+                    <option value='ecomm'>Shopify Ecommerce</option>
+                  </select> 
+            
+                </div>
+            
+                <div>
+            
+                  <label 
+                    class="Label"
+                    id="dlLabel" 
+                    style="visibility: hidden;" 
+                    for="dlName">
+                      DataLayer Name:
+                  </label>
+                  
+                  <input 
+                    class="form-control"
+                    type="text" 
+                    style="visibility: hidden;" 
+                    placeholder="Default dataLayer" 
+                    name="dlName" 
+                    value="dataLayer" 
+                    id="dlName" >
+            
+                </div>
+              
+              </div> 
+
+
+              <div class="Stepper-btns">
+                <button 
+                class="btn-shape btn-main btn-center" 
+                onclick="stepper1.previous()">
+                Previous
+                </button>
+                <button 
+                class="btn-shape btn-main btn-center" 
+                onclick="stepper1.next()">
+                Next
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Third Step - Datalayer Variable -->
+            <div id="test-l-3" class="content">
+              
+              <p class="text-center">Datalayer Variables</p>
+
+
+              <div class="container" id="MainContainer"></div>
+
+              <div class="container" id="EcommContainer"></div>
+
+              <div id="error" class="container"></div>
+
+              <div id="divfunctionButtons" class="p-2">
+                <button 
+                  type="button" 
+                  id="addMore" 
+                  class="addMore datadeclare btn-primary-gradi" 
+                  style="display: inline;visibility:hidden">
+                  + Add another
+                </button>
+                <button 
+                  type="button" 
+                  id="dataGenerate" 
+                  class="btn-primary-gradi"
+                  onclick="generateCode()" 
+                  style="display: inline;visibility:hidden">
+                  Generate
+                </button>
+              </div>
+
+              <div class="Stepper-btns">
+                <button 
+                class="btn-shape btn-main btn-center" 
+                onclick="stepper1.previous()">
+                Previous
+                </button>
+                <button 
+                  class="btn-shape btn-main btn-center" 
+                  onclick="stepper1.next()">
+                  Next
+                </button>  
+              </div>
+              
+
+
+            </div>
+
+            <!-- Fourth Step - Datalayer Variable -->
+            <div id="test-l-4" class="content">
+              <p class="text-center">Datalayer generator</p>
+
+              <div> 
+                <textarea id="taggingcode" name="taggingcode" rows="10" cols="45" readonly="readonly" style="visibility:hidden;">
+                  DataLayer Code
+                </textarea>
+                
+                <div class="Btn__actions">
+      
+                  <button 
+                    class="btn-primary-gradi"
+                    id="clearall" 
+                    onclick="clearall()"
+                    style="visibility:hidden;"">
+                      Clear
+                  </button>
+      
+                  <button 
+                    class="btn-primary-gradi"
+                    id="copyToClipboard" 
+                    onclick="copyToClipboard()" 
+                    style="visibility:hidden;">
+                      <b>Copy DataLayer</b>
+                  </button>
+      
+                </div>
+              
+              
+              </div>
+
+              
+            
+              
+              <div id="PastCodes" class="container-fluid" style="display:none;">
+                <div id="pastCode" class="container-fluid pastCode">
+                <button type="button" class="collapsible">
+                  <p class="pcbuttonId" style="display: none;">1</p>
+                  <b class="pcbuttonText">Open Section 1</b>
+                  <span class="close" style="float: left;margin-right: 8px;" onclick="deleteData(this)">
+                    <img src="Images/del.png" style="width: 20px; height: 20px;"></span>
+                  <span class="arrow" style="float: right;"></span>
+                  
+                </button>
+                <div class="content">
+                  <textarea class="pccontextText" name="taggingcode" rows="1" cols="50" readonly="readonly">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </textarea>
+                  <button class="copyToClipboard" onclick="copyToClipboard(this)">Copy to clipboard</button>
+                </div>
+              </div>
+                
+              </div>
+              
+            
+              <div id="datalayerdec" class="container-fluid datalayer datalayerdec" style="padding: 0 2px 2px 0;display: none;">
+              <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
+                  <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;">
+                <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+                <div style="display: inline;;width:50%" class="parinputvalue">
+                  <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="display: inline">
+                <span class="nestedparam" onclick="nestedparams(this)">+ Nested</span>
+              </div>
+                <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.png" alt="remove row" style="visibility:hidden;height: 17px;width: 23px;padding-left: 6px;">
+                <br>	
+                <div class="container nestedparams" style="margin-top: 4px;  display:block;visibility:hidden;"></div>
+              </div>
+              </div>
+            
+              <div id="datalayerPush" class="container-fluid datalayer datalayerPush" style="padding: 0 2px 2px 0;display: none">
+            
+              <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
+                  <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
+                <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
+                <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;;max-width: 80%;border-radius: 8px;"></div>
+              </div>
+            
+              <div id="datalayerEcomm" class="container-fluid datalayer datalayerEcomm" style="padding: 0 2px 2px 0;display: none;">
+            
+              <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
+              <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline">Choose the Ecommerce Event </label>
+              <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
+              <select class="my-auto form-select" id ="ecommdropdown" name="dropdown" onfocus="removeerrormsg()">
+                <option value='choose'>Select</option>
+                <option value='impression'>Product Impression</option>
+                <option value='click'>Product Click</option>
+                <option value='details'>Product View</option>
+                <option value='addtocart'>Product Add to Cart</option>
+                  <option value='removecart'>Remove from Cart</option>
+                <option value='checkout'>Product Checkout</option>
+                <option value='checkoutopt'>Checkout Option</option>
+                  <option value='purchase'>Product Purchase</option>
+                <option value='fullrefund'>Full Refund</option>
+                <option value='partrefund'>Partial Refund</option>
+                
+              </select>
+              <input type="checkbox" id="useevent" name="Event"  style="margin-left:40px;margin-right:4px;display: inline;vertical-align:sub;visibility:hidden">
+                <label for="Useevent" style="visibility:hidden">Use Event</label><br>
+              </div>
+              </div>
+            
+              <div id="datalayerecommevent" class="container-fluid datalayer datalayerecommevent" style="padding: 0 2px 2px 0;display: none;">
+              <div id="even_det" style="display: flex;">
+              <div style="height:max-content; padding-right:16px">
+              <h3>Event Details</h3>
+              </div>
+              <div style="height:max-content;margin-top:8px" >
+              <select name="configType" id="Configs" class="form-select">
+                  <option value="GA4">Google Analytics 4</option>
+                  <option value="UA">Universal Analytics</option>
+            
+                </select>
+                </div>
+              </div>
+              <div id="divproducts" class="divproducts product-wrapper">
+            
+              <button class="nestedparam" id="addnewproduct" style="margin:4px"> Add product</button>
+            
+              <div class="divproductparams">
+              <button class="nestedparam" id="productparams" onclick="addProdParam(this)" style="display:inline-block;margin-bottom:4px">Add product parameter</button>
+              <img id="removeIcon" class="remove_node" onclick="removeNode(this)" src="Images/close.png" alt="remove row" style="visibility:inherit";>
+              <div class="input-group keyvalue productparams" style="padding: 0 2px 2px 0">
+              <input list="prodparams" class="form-control key" onfocus="removeerrormsg()" id="key" placeholder="Product parameter name" style="display: inline;"/>
+                <datalist id="prodparams" >
+                  
+                  <option>name</option>
+                  <option>id</option>
+                  <option>price</option>
+                  <option>brand</option>
+                  <option>collection</option>
+                  <option>variant</option>
+                  <option>list</option>
+                  <option>position</option>
+                  <option>coupon</option>
+                  <option>item_id</option>
+                  <option>item_name</option>
+                  <option>item_price</option>
+                  <option>item_list</option>
+                  <option>item_discount</option>
+                  <option>item_brand</option>
+                  <option>item_collection</option>
+                  <option>item_collection2</option>
+                  <option>item_collection3</option>
+                  <option>item_collection4</option>
+                  <option>item_collection5</option>
+                  <option>item_created_at</option>
+                  <option>item_compare_at_price</option>
+                  <option>item_compare_at_price_max</option>
+                  <option>item_compare_at_price_min</option>
+                  <option>item_gift_card</option>
+                  <option>item_handle</option>	
+                  <option>item_has_only_default_variant</option>
+                  <option>item_price_max</option>
+                  <option>item_price_min</option>
+                  <option>item_price_varies</option>
+                  <option>item_tags</option>
+                  <option>item_type</option>
+                  <option>item_url</option>
+                  <option>item_vendor</option>  
+                  <option>item_quantity</option>
+                </datalist>
+                
+                <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+                  <input list="prodvalues" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Product parameter Value" style="display: inline;">
+                  <datalist id="prodvalues" >
+                    <option>{{product.available}}</option>
+                    <option>{{product.collections}}</option>
+                    <option>{{product.compare_at_price}}</option>
+                    <option>{{product.compare_at_price_max}}</option>
+                    <option>{{product.compare_at_price_min}}</option>
+                    <option>{{product.created_at}}</option>
+                    <option>{{product.gift_card?}}</option>
+                    <option>{{product.handle}}</option>	
+                    <option>{{product.has_only_default_variant}}</option>
+                    <option>{{product.id}}</option>
+                    <option>{{product.title}}</option>
+                    <option>{{product.options}}</option>
+                    <option>{{product.price}}</option>
+                    <option>{{product.price_max}}</option>
+                    <option>{{product.price_min}}</option>
+                    <option>{{product.price_varies}}</option>
+                    <option>{{product.tags}}</option>
+                    <option>{{product.type}}</option>
+                    <option>{{product.url}}</option>
+                    <option>{{product.variants}}</option>
+                    <option>{{product.vendor}}</option>
+                  </datalist>
+                  <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
+              </div>
+              </div>
+              </div>
+            
+              <div id="diveventparams" class="product-wrapper">
+              <button class="nestedparam" id="eventparams" style="display:inline;margin-bottom:4px">Add event parameter</button>
+              <p style="display: inline;">[optional]</p>
+              <div class="input-group keyvalue eventparams" style="padding: 0 2px 2px 0">
+                  <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Parameter name" style="display: inline;">
+                <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+                  <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Paramater Value" style="display: inline;">
+                <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
+              </div>
+            
+              </div>
+            
+              <div id="divactionfieldparams" class="product-wrapper">
+              <button class="nestedparam" id="actionfieldparams" style="display:block">Add action field</button>
+              <div class="input-group keyvalue actionfieldparams" style="padding: 0 2px 2px 0">
+              <input list="afparams" type="text" class="form-control key" placeholder="Action field Name" id="key" onfocus="removeerrormsg()" style="display: inline;"/>
+                <datalist id="afparams">
+                <option>list</option>
+                <option>step</option>
+                <option>option</option>
+                <option>id</option>
+                <option>affiliation</option>
+                <option>revenue</option>
+                <option>tax</option>
+                  <option>shipping</option>	
+                <option>coupon</option>	
+                </datalist>
+                <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
+                  <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Action field Value" style="display: inline;">
+                  <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
+              </div>
+              </div>
+            
+            
+              </div>
+
+
+
+              <table id="headerTable" style="display:none">
+              </table>
+              <h4 id="titlePastcodes"></h4>
+              <div class="excel_download Stepper-btns">
+                <button 
+                  class="btn-shape btn-main" 
+                  onclick="stepper1.previous()">
+                  Previous
+                </button>
+                <a 
+                  class="nestedparam btn-shape btn-main" 
+                  href="" 
+                  onclick="createExportTable()">
+                  Download Excel
+                </a>
+              </div>
+              
+            
+
+            </div>
+
+          </div>
         </div>
-
       </div>
-
-
-      <div class="col-6">
-
-        <div> 
-          <textarea id="taggingcode" name="taggingcode" rows="10" cols="45" readonly="readonly" style="visibility:hidden;">
-            DataLayer Code
-          </textarea>
-          
-          <div class="Btn__actions">
-
-            <button 
-              class="btn-primary-gradi"
-              id="clearall" 
-              onclick="clearall()"
-              style="visibility:hidden;"">
-                Clear
-            </button>
-
-            <button 
-              class="btn-primary-gradi"
-              id="copyToClipboard" 
-              onclick="copyToClipboard()" 
-              style="visibility:hidden;">
-                <b>Copy DataLayer</b>
-            </button>
-
-          </div>
-        
-        
-          </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  
-
-  <table id="headerTable" style="display:none">
-  </table>
-  <h4 id="titlePastcodes"></h4>
-  <div class="excel_download">
-    <a class="nestedparam" href="" onclick="createExportTable()">Download Excel</a>
-  </div>
-
-  <div id="PastCodes" class="container-fluid">
-    <div id="pastCode" class="container-fluid pastCode">
-    <button type="button" class="collapsible">
-      <p class="pcbuttonId" style="display: none;">1</p>
-      <b class="pcbuttonText">Open Section 1</b>
-      <span class="close" style="float: left;margin-right: 8px;" onclick="deleteData(this)">
-        <img src="Images/del.png" style="width: 20px; height: 20px;"></span>
-      <span class="arrow" style="float: right;"></span>
-      
-    </button>
-    <div class="content">
-      <textarea class="pccontextText" name="taggingcode" rows="1" cols="50" readonly="readonly">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </textarea>
-      <button class="copyToClipboard" onclick="copyToClipboard(this)">Copy to clipboard</button>
     </div>
   </div>
-    
-  </div>
 
+ 
+ 
 
-  <div id="datalayerdec" class="container-fluid datalayer datalayerdec" style="padding: 0 2px 2px 0;display: none;">
-  <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
-      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Key" style="display: inline;">
-    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-    <div style="display: inline;;width:50%" class="parinputvalue">
-      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Value" style="display: inline">
-    <span class="nestedparam" onclick="nestedparams(this)">+ Nested</span>
-  </div>
-    <img class="my-auto" id="removeIcon" onclick="removeNode()" src="Images/images.png" alt="remove row" style="visibility:hidden;height: 17px;width: 23px;padding-left: 6px;">
-    <br>	
-    <div class="container nestedparams" style="margin-top: 4px;  display:block;visibility:hidden;"></div>
-  </div>
-  </div>
-
-  <div id="datalayerPush" class="container-fluid datalayer datalayerPush" style="padding: 0 2px 2px 0;display: none">
-
-  <div class="input-group keyvalue" style="padding: 0 2px 2px 0; margin-bottom: 20px">
-      <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline"><strong>Enter the Event Name</strong></label>
-    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
-    <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Value" style="display: inline;;max-width: 80%;border-radius: 8px;"></div>
-  </div>
-
-  <div id="datalayerEcomm" class="container-fluid datalayer datalayerEcomm" style="padding: 0 2px 2px 0;display: none;">
-
-  <div class="input-group keyvalue" style="padding: 0 2px 2px 0">
-  <label class="my-auto" style="height:100%;display: inline;margin-bottom: 0px;vertical-align: baseline">Choose the Ecommerce Event </label>
-  <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline;vertical-align: baseline"><b>:</b></p>
-  <select class="my-auto form-select" id ="ecommdropdown" name="dropdown" onfocus="removeerrormsg()">
-    <option value='choose'>Select</option>
-    <option value='impression'>Product Impression</option>
-    <option value='click'>Product Click</option>
-    <option value='details'>Product View</option>
-    <option value='addtocart'>Product Add to Cart</option>
-      <option value='removecart'>Remove from Cart</option>
-    <option value='checkout'>Product Checkout</option>
-    <option value='checkoutopt'>Checkout Option</option>
-      <option value='purchase'>Product Purchase</option>
-    <option value='fullrefund'>Full Refund</option>
-    <option value='partrefund'>Partial Refund</option>
-    
-  </select>
-  <input type="checkbox" id="useevent" name="Event"  style="margin-left:40px;margin-right:4px;display: inline;vertical-align:sub;visibility:hidden">
-    <label for="Useevent" style="visibility:hidden">Use Event</label><br>
-  </div>
-  </div>
-
-  <div id="datalayerecommevent" class="container-fluid datalayer datalayerecommevent" style="padding: 0 2px 2px 0;display: none;">
-  <div id="even_det" style="display: flex;">
-  <div style="height:max-content; padding-right:16px">
-  <h3>Event Details</h3>
-  </div>
-  <div style="height:max-content;margin-top:8px" >
-  <select name="configType" id="Configs" class="form-select">
-      <option value="GA4">Google Analytics 4</option>
-      <option value="UA">Universal Analytics</option>
-
-    </select>
-    </div>
-  </div>
-  <div id="divproducts" class="divproducts product-wrapper">
-
-  <button class="nestedparam" id="addnewproduct" style="margin:4px"> Add product</button>
-
-  <div class="divproductparams">
-  <button class="nestedparam" id="productparams" onclick="addProdParam(this)" style="display:inline-block;margin-bottom:4px">Add product parameter</button>
-  <img id="removeIcon" class="remove_node" onclick="removeNode(this)" src="Images/close.png" alt="remove row" style="visibility:inherit";>
-  <div class="input-group keyvalue productparams" style="padding: 0 2px 2px 0">
-  <input list="prodparams" class="form-control key" onfocus="removeerrormsg()" id="key" placeholder="Product parameter name" style="display: inline;"/>
-    <datalist id="prodparams" >
-      
-      <option>name</option>
-      <option>id</option>
-      <option>price</option>
-      <option>brand</option>
-      <option>collection</option>
-      <option>variant</option>
-      <option>list</option>
-      <option>position</option>
-      <option>coupon</option>
-      <option>item_id</option>
-      <option>item_name</option>
-      <option>item_price</option>
-      <option>item_list</option>
-      <option>item_discount</option>
-      <option>item_brand</option>
-      <option>item_collection</option>
-      <option>item_collection2</option>
-      <option>item_collection3</option>
-      <option>item_collection4</option>
-      <option>item_collection5</option>
-      <option>item_created_at</option>
-      <option>item_compare_at_price</option>
-      <option>item_compare_at_price_max</option>
-      <option>item_compare_at_price_min</option>
-      <option>item_gift_card</option>
-      <option>item_handle</option>	
-      <option>item_has_only_default_variant</option>
-      <option>item_price_max</option>
-      <option>item_price_min</option>
-      <option>item_price_varies</option>
-      <option>item_tags</option>
-      <option>item_type</option>
-      <option>item_url</option>
-      <option>item_vendor</option>  
-      <option>item_quantity</option>
-    </datalist>
-    
-    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-      <input list="prodvalues" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Product parameter Value" style="display: inline;">
-      <datalist id="prodvalues" >
-        <option>{{product.available}}</option>
-        <option>{{product.collections}}</option>
-        <option>{{product.compare_at_price}}</option>
-        <option>{{product.compare_at_price_max}}</option>
-        <option>{{product.compare_at_price_min}}</option>
-        <option>{{product.created_at}}</option>
-        <option>{{product.gift_card?}}</option>
-        <option>{{product.handle}}</option>	
-        <option>{{product.has_only_default_variant}}</option>
-        <option>{{product.id}}</option>
-        <option>{{product.title}}</option>
-        <option>{{product.options}}</option>
-        <option>{{product.price}}</option>
-        <option>{{product.price_max}}</option>
-        <option>{{product.price_min}}</option>
-        <option>{{product.price_varies}}</option>
-        <option>{{product.tags}}</option>
-        <option>{{product.type}}</option>
-        <option>{{product.url}}</option>
-        <option>{{product.variants}}</option>
-        <option>{{product.vendor}}</option>
-      </datalist>
-      <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
-  </div>
-  </div>
-  </div>
-
-  <div id="diveventparams" class="product-wrapper">
-  <button class="nestedparam" id="eventparams" style="display:inline;margin-bottom:4px">Add event parameter</button>
-  <p style="display: inline;">[optional]</p>
-  <div class="input-group keyvalue eventparams" style="padding: 0 2px 2px 0">
-      <input type="text" class="form-control key" id="key" onfocus="removeerrormsg()" placeholder="Parameter name" style="display: inline;">
-    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-      <input type="text" class="form-control value" onfocus="removeerrormsg()" id="value" placeholder="Paramater Value" style="display: inline;">
-    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
-  </div>
-
-  </div>
-
-  <div id="divactionfieldparams" class="product-wrapper">
-  <button class="nestedparam" id="actionfieldparams" style="display:block">Add action field</button>
-  <div class="input-group keyvalue actionfieldparams" style="padding: 0 2px 2px 0">
-  <input list="afparams" type="text" class="form-control key" placeholder="Action field Name" id="key" onfocus="removeerrormsg()" style="display: inline;"/>
-    <datalist id="afparams">
-    <option>list</option>
-    <option>step</option>
-    <option>option</option>
-    <option>id</option>
-    <option>affiliation</option>
-    <option>revenue</option>
-    <option>tax</option>
-      <option>shipping</option>	
-    <option>coupon</option>	
-    </datalist>
-    <p class="my-auto" style="margin-left:4px;margin-right:4px;display: inline"><b>:</b></p>
-      <input type="text" class="form-control value" id="value" onfocus="removeerrormsg()" placeholder="Action field Value" style="display: inline;">
-    <img class="my-auto" id="removeIcon" onclick="removeNode(this)" src="Images/images.png" alt="remove row" style="visibility:inherit;height: 17px;width: 23px;padding-left: 6px;">
-  </div>
-  </div>
-
-
-  </div>
+ 
 
   <div id="androidEvent" class="container-fluid android androidEvent" style="padding: 0 2px 2px 0;display: none">
 
@@ -480,81 +545,6 @@ dataLayer.push({
   </div>
 </div>
 
-<div class="container Faq_wrapper">
-
-  <div class="row">
-
-    <div class="col-12">
-
-      <h3 class="Heading__main">FAQ</h3>
-
-      <div class="accordion" id="accordionExample">
-        
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              What is Datalayer?
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              The data layer is an object used by Google Tag Manager and gtag.js to pass information to tags. Events or variables can be passed via the data layer, and triggers can be set up based on the values of variables.
-              For more information please visit <a href="https://developers.google.com/tag-platform/tag-manager/datalayer">Google tag manager datalayer reference</a>            
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Datalayer Push
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              It is used to track specific user action/engagement and can be used multiple times on a page. It currently supports single level of nesting within the array.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Shopify Ecommerce
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              Shopify Ecommerce tags are used to create all the website ecommerce datalayer events like product impression, product click, product detail view, product Add to Cart, product Remove from Cart,checkout, purchase and refund. It takes care of all the event specifications for each type of event. Below are the definitions of different level of parameters used in it:
-              <br>
-              <strong>Product level Paramaters:</strong> This is used to pass the product parameters within the event from <a href="https://shopify.dev/docs/api/liquid/objects/product">shopify product object</a>
-              <br>
-              <strong>Action field:</strong> This is used to pass list name and other ecommerce child parameters
-              <br>
-              <strong>Event level parameters:</strong> This is used to pass event level parameters(if required) with the specific event
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Datalayer declaration
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              It creates the datalayer code to be placed on the top of the page. All the variables under it are associated with all the events on the page. It currently supports single level of nesting within the array.
-            </div> 
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
 
 <script src="./js/Database.js"></script>
 <script src="./js/datalayerhelper.js"></script>

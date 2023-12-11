@@ -2,6 +2,35 @@ header {
   padding:25px 0;
 }
 
+.btn-shape {
+  padding: 10px 55px!important;
+  border-radius: 100px!important;
+  border:none!important;
+}
+
+.btn-center {
+  display: block;
+  margin:0 auto;
+}
+
+.btn-main {
+  background-color: #ef8195;
+  color:white;
+}
+
+.Stepper-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.bs-stepper-header .step.active {
+  background-color: white!important;
+}
+
+.active .bs-stepper-circle {
+  background-color: #ef8195!important;
+}
+
 a {
   text-decoration: none!important;
   color:black!important;
@@ -152,3 +181,10 @@ button, input[type="submit"], input[type="reset"] {
     color:white;
 
   }
+
+  p, .Label, label, h1, h2, h3, h4  {
+    color:black!important;
+  }
+
+
+
