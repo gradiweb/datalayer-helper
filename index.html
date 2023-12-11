@@ -99,28 +99,28 @@ dataLayer.push({
             <div class="step" data-target="#test-l-1">
               <button type="button" class="btn step-trigger">
                 <span class="bs-stepper-circle">1</span>
-                <span class="bs-stepper-label">First step</span>
+                <span class="bs-stepper-label">Introduction</span>
               </button>
             </div>
             <div class="line"></div>
-            <div class="step" data-target="#test-l-2">
+            <div id="step-2" class="step" data-target="#test-l-2">
               <button type="button" class="btn step-trigger">
                 <span class="bs-stepper-circle">2</span>
-                <span class="bs-stepper-label">Second step</span>
+                <span class="bs-stepper-label">Datalayer Details</span>
               </button>
             </div>
             <div class="line"></div>
-            <div class="step" data-target="#test-l-3">
+            <div id="step-3" class="step" data-target="#test-l-3">
               <button type="button" class="btn step-trigger">
                 <span class="bs-stepper-circle">3</span>
-                <span class="bs-stepper-label">Third step</span>
+                <span class="bs-stepper-label">Datalayer Variables</span>
               </button>
             </div>
             <div class="line"></div>
-            <div class="step" data-target="#test-l-4">
+            <div id="step-4" class="step" data-target="#test-l-4">
               <button type="button" class="btn step-trigger">
                 <span class="bs-stepper-circle">4</span>
-                <span class="bs-stepper-label">Fouht step</span>
+                <span class="bs-stepper-label">Datalayer Preview</span>
               </button>
             </div>
           </div>
@@ -129,21 +129,15 @@ dataLayer.push({
 
             <!-- First Step - Introduction -->
             <div id="test-l-1" class="content">
-              <p class="text-center">Introduction</p>
+              <p class="text-center">Graditools: Datalayer Generator</p>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, consectetur molestias odio earum libero repudiandae quae, reiciendis minus veniam voluptatibus, commodi accusantium obcaecati quisquam! Ab, odio. Dolor velit excepturi illum?
-                Enim, non ullam nulla sit beatae modi harum perspiciatis est temporibus porro consequatur et delectus quisquam mollitia qui similique cupiditate dolorum, dolores cum? Aspernatur vero quia quis non cum accusamus.
-                Itaque perspiciatis reprehenderit molestiae veniam nihil atque pariatur aut similique expedita cupiditate saepe accusantium et vitae nisi unde, tenetur labore blanditiis qui officiis consectetur aliquid mollitia nostrum praesentium! Deserunt, quas.
-                Eligendi facilis voluptatibus voluptatem repellat dolorem amet dicta similique autem ipsam aspernatur mollitia iure soluta excepturi impedit quos esse porro obcaecati, necessitatibus officia eius earum! Nulla minima animi nam magni!
-                Maxime saepe deserunt aliquid, voluptatibus ad repellendus consequatur quo quas, tenetur distinctio fuga at molestias obcaecati laudantium debitis? Laudantium error, eveniet doloremque quasi officia modi suscipit consectetur tempora est aperiam?
-                Asperiores, minima illo unde temporibus, molestiae eos delectus cum odio impedit beatae aperiam ducimus quos omnis placeat maiores commodi minus laboriosam velit cupiditate reiciendis nobis. Possimus quod atque nesciunt velit?
-                Vero repudiandae possimus, consequuntur aut qui sit deleniti minima odit hic. Libero quod ullam quia! Accusantium harum id totam, doloremque aperiam expedita labore. Sed libero omnis facere error! Id, libero?
-                Dignissimos dolores libero at, inventore dicta amet ratione aut assumenda voluptate, blanditiis neque? Perspiciatis corrupti minus sint, veritatis natus voluptates, illo debitis atque rem labore similique saepe voluptatem nesciunt id.
-                Sequi pariatur explicabo quia, praesentium asperiores aliquid, amet, a non nobis reiciendis obcaecati neque? Ipsa animi laboriosam voluptate eveniet ab, praesentium ea itaque! Alias rerum velit vel quis suscipit sed.
-                Eius, animi. Incidunt, assumenda provident. Laboriosam officiis, debitis minima, fugit facere provident quae aspernatur consectetur dolorum ipsa corporis harum quibusdam error nemo delectus dolore amet suscipit doloremque fugiat expedita similique!
+                Explore our dynamic Datalayer generation tool, designed to effortlessly create custom data layers without technical complexities. 
+                Enhance data collection, improve web analytics, and tailor your strategy to meet your unique needs. 
+                Empower your decision-making with the simplicity of our Datalayer generator!
               </p>
               <button 
+                id="intro"
                 class="btn-shape btn-main btn-center" 
                 onclick="stepper1.next()">
                   Let's start
@@ -152,19 +146,13 @@ dataLayer.push({
 
             <!-- Second Step - Datalayer Details -->
             <div id="test-l-2" class="content">
-              <p class="text-center">Datalayer details</p>
-
 
               <div class="row Main__Datalayer">
-
-                <h1>
-                  Graditools: DataLayer Helper
-                </h1>
             
-                <div>
+                <div id="datalayer-details">
             
                   <p class="Label">To get started, please choose the data layer type: </p>
-                  <select class="form-select selector" id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
+                  <select class="form-select selector datalayer-type" id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
                     <option value='select'>Select Data Layer Type</option>
                     <option value='declare'>Datalayer Declaration</option>
                     <option value='push'>Datalayer Push</option>
@@ -558,11 +546,23 @@ dataLayer.push({
     introJs().setOptions({
       steps:[{
         title:'Welcome',
-        intro:'Hello World'
+        intro:'Generate your datalayer in a simple and efficient way with our tool'
       },
       {
-        element:document.querySelector('.dstepper-block'),
-        intro:'This is the introduction'
+        element:document.querySelector('#step-2'),
+        intro:'First select the type and name of the datalayer'
+      },
+      {
+        element:document.querySelector('#step-3'),
+        intro:'Then select the variables you want to load in your datalayer object.'
+      },
+      {
+        element:document.querySelector('#step-4'),
+        intro:'Finally copy the code or download it in xls format to share it with your agency or marketing and SEO team.'
+      },
+      {
+        element:document.querySelector('#intro'),
+        intro:"Let's start the tour"
       }]
     }).start();
   </script>

@@ -1104,17 +1104,3 @@ catch(e){
 
 
       
-
-/*jslint browser: true*/
-/*global $, jQuery, alert*/
-(function($) {
-  'use strict';
-
-  $(function() {
-
-      $(document).ready(function() {
-        introJs().start();
-      });
-  });
-
-}(jQuery, this));
