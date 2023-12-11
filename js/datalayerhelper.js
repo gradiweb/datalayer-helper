@@ -1101,3 +1101,20 @@ catch(e){
         animation: true
       })
       var stepper4 = new Stepper(document.querySelector('#stepper4'))
+
+
+      
+
+/*jslint browser: true*/
+/*global $, jQuery, alert*/
+(function($) {
+  'use strict';
+
+  $(function() {
+
+      $(document).ready(function() {
+        introJs().start();
+      });
+  });
+
+}(jQuery, this));
