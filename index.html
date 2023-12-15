@@ -79,12 +79,14 @@ dataLayer.push({
 
 <body>
 
+
+
+
 <div id="bodycontainer" class="container">
   
 
   
   <div class="container">
-    <h1>bs-stepper</h1>
     
    
     <div class="row">
@@ -149,9 +151,24 @@ dataLayer.push({
 
               <div class="row Main__Datalayer">
             
-                <div id="datalayer-details">
+                <div 
+                  id="datalayer-details">
+
+                  
             
-                  <p class="Label">To get started, please choose the data layer type: </p>
+                  <p 
+                    class="Label">
+                    To get started, please choose the data layer type: 
+                    <div class="tooltip-container">
+                      <a 
+                        href="#" 
+                        class="openSidemodal"
+                        id="datalayer-details-help">
+                        <img src="./Images/information.gif" alt="">
+                      </a>
+                      
+                    </div>
+                  </p>
                   <select class="form-select selector datalayer-type" id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
                     <option value='select'>Select Data Layer Type</option>
                     <option value='declare'>Datalayer Declaration</option>
@@ -536,34 +553,76 @@ dataLayer.push({
   </div>
 </div>
 
+  <!-- Overlay para cerrar el sidemodal haciendo clic fuera de él -->
+<div id="sidemodal-overlay"></div>
+
+<!-- Sidemodal -->
+<div id="sidemodal">
+  <div id="sidemodal-content">
+    <span id="closeSidemodal">&times;</span>
+    <p id="Help-text"></p>
+  </div>
+</div>
 
 <script src="./js/Database.js"></script>
 <script src="./js/datalayerhelper.js"></script>
-
 </body>
   <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/intro.min.js"></script> 
   <script>
+
+    $(document).ready(function() {
+      // Abrir sidemodal
+      $(".openSidemodal").click(function() {
+        $("#sidemodal").width("100%");
+        $("#sidemodal-content").css("right", "0"); /* Cambiado de "left" a "right" */
+        $("#sidemodal-overlay").show(); /* Mostrar overlay */
+      });
+
+      // Cerrar sidemodal
+      function closeSidemodal() {
+        $("#sidemodal").width("0");
+        $("#sidemodal-content").css("right", "-250px"); /* Cambiado de "left" a "right" */
+        $("#sidemodal-overlay").hide(); /* Ocultar overlay */
+      }
+
+      $("#closeSidemodal, #sidemodal-overlay").click(closeSidemodal);
+
+      // Cerrar sidemodal también al presionar la tecla Escape
+      $(document).keyup(function(e) {
+        if (e.key === "Escape") {
+          closeSidemodal();
+        }
+      });
+    });
+
+    /*
     introJs().setOptions({
-      steps:[{
-        title:'Welcome',
-        intro:'Generate your datalayer in a simple and efficient way with our tool'
-      },
-      {
-        element:document.querySelector('#step-2'),
-        intro:'First select the type and name of the datalayer'
-      },
-      {
-        element:document.querySelector('#step-3'),
-        intro:'Then select the variables you want to load in your datalayer object.'
-      },
-      {
-        element:document.querySelector('#step-4'),
-        intro:'Finally copy the code or download it in xls format to share it with your agency or marketing and SEO team.'
-      },
-      {
-        element:document.querySelector('#intro'),
-        intro:"Let's start the tour"
-      }]
+      steps:[
+        {
+          title:'Welcome',
+          intro:'Generate your datalayer in a simple and efficient way with our tool'
+        },
+        {
+          element:document.querySelector('#step-2'),
+          intro:'First select the type and name of the datalayer'
+        },
+        {
+          element:document.querySelector('#step-3'),
+          intro:'Then select the variables you want to load in your datalayer object.'
+        },
+        {
+          element:document.querySelector('#step-4'),
+          intro:'Finally copy the code or download it in xls format to share it with your agency or marketing and SEO team.'
+        },
+        {
+          element:document.querySelector('#intro'),
+          intro:"Let's start the tour"
+        }
+      ]
     }).start();
+    */
+
+    
   </script>
+
 </html>

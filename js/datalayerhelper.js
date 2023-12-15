@@ -1103,4 +1103,15 @@ catch(e){
       var stepper4 = new Stepper(document.querySelector('#stepper4'))
 
 
+      $(document).ready(function() {
+        // Abrir sidemodal
+        $("#openSidemodal").click(function() {
+          alert('clicked elemente')
+          $("#sidemodal").width("100%");
+        });
       
+        // Cerrar sidemodal
+        $("#closeSidemodal").click(function() {
+          $("#sidemodal").width("0");
+        });
+      });
