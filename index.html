@@ -138,13 +138,20 @@ dataLayer.push({
                 Enhance data collection, improve web analytics, and tailor your strategy to meet your unique needs. 
                 Empower your decision-making with the simplicity of our Datalayer generator!
               </p>
-              <button 
-                id="intro"
-                class="btn-shape btn-main btn-center" 
-                onclick="stepper1.next()">
-                  Let's start
-              </button>
+              
+              <div class="Stepper-btns">
+                <div class="Btns-container">
+                  <button 
+                    class="btn-shape btn-main btn-spacing" 
+                    onclick="stepper1.next()">
+                      Let's start
+                  </button>
+                </div>
+              </div>
+
             </div>
+
+            
 
             <!-- Second Step - Datalayer Details -->
             <div id="test-l-2" class="content">
@@ -203,16 +210,18 @@ dataLayer.push({
 
 
               <div class="Stepper-btns">
-                <button 
-                class="btn-shape btn-main btn-center" 
-                onclick="stepper1.previous()">
-                Previous
-                </button>
-                <button 
-                class="btn-shape btn-main btn-center" 
-                onclick="stepper1.next()">
-                Next
-                </button>
+                <div class="Btns-container">
+                  <button 
+                    class="btn-shape btn-main btn-spacing" 
+                    onclick="stepper1.previous()">
+                      Previous
+                  </button>
+                  <button 
+                    class="btn-shape btn-main btn-spacing" 
+                    onclick="stepper1.next()">
+                      Next
+                  </button>
+                </div>
               </div>
 
             </div>
@@ -248,16 +257,18 @@ dataLayer.push({
               </div>
 
               <div class="Stepper-btns">
-                <button 
-                class="btn-shape btn-main btn-center" 
-                onclick="stepper1.previous()">
-                Previous
-                </button>
-                <button 
-                  class="btn-shape btn-main btn-center" 
-                  onclick="stepper1.next()">
-                  Next
-                </button>  
+                <div class="Btns-container">
+                  <button 
+                    class="btn-shape btn-main btn-spacing" 
+                    onclick="stepper1.previous()">
+                      Previous
+                  </button>
+                  <button 
+                    class="btn-shape btn-main btn-spacing" 
+                    onclick="stepper1.next()">
+                      Next
+                  </button>
+                </div>
               </div>
               
 
@@ -498,21 +509,20 @@ dataLayer.push({
               <table id="headerTable" style="display:none">
               </table>
               <h4 id="titlePastcodes"></h4>
-              <div class="excel_download Stepper-btns">
-                <button 
-                  class="btn-shape btn-main" 
-                  onclick="stepper1.previous()">
-                  Previous
-                </button>
-                <a 
-                  class="nestedparam btn-shape btn-main" 
-                  href="" 
-                  onclick="createExportTable()">
-                  Download Excel
-                </a>
+              <div class="Stepper-btns excel_download">
+                <div class="Btns-container">
+                  <button 
+                    class="btn-shape btn-main btn-spacing" 
+                    onclick="stepper1.previous()">
+                      Previous
+                  </button>
+                  <button 
+                    class="nestedparam btn-shape btn-main btn-spacing" 
+                    onclick="createExportTable()">
+                    Download Excel
+                  </button>
+                </div>
               </div>
-              
-            
 
             </div>
 
@@ -581,7 +591,7 @@ dataLayer.push({
       // Cerrar sidemodal
       function closeSidemodal() {
         $("#sidemodal").width("0");
-        $("#sidemodal-content").css("right", "-250px"); /* Cambiado de "left" a "right" */
+        $("#sidemodal-content").css("right", "-320px"); /* Cambiado de "left" a "right" */
         $("#sidemodal-overlay").hide(); /* Ocultar overlay */
       }
 

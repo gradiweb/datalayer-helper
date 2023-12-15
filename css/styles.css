@@ -13,14 +13,26 @@ header {
   margin:0 auto;
 }
 
+.btn-spacing {
+  margin:0 30px;
+}
+
 .btn-main {
   background-color: #ef8195;
   color:white;
 }
 
 .Stepper-btns {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Btns-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .bs-stepper-header .step.active {
@@ -248,5 +260,5 @@ button, input[type="submit"], input[type="reset"] {
   right: 10px;
   font-size: 28px;
   cursor: pointer;
-  color: black; /* Añadido para que sea visible sobre el fondo oscuro */
+  color: black;
 }
