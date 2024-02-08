@@ -5,6 +5,7 @@
     
 <script type="text/javascript">
 
+
 dataLayer.push({
   'ecommerce': {
     'currencyCode': 'EUR',                       // Local currency is optional.
@@ -93,7 +94,7 @@ dataLayer.push({
 
       <div class="col-md-12 mt-5">
         
-
+      
         <div id="stepper1" class="bs-stepper">
 
           <!-- Stepper header -->
@@ -160,8 +161,6 @@ dataLayer.push({
             
                 <div 
                   id="datalayer-details">
-
-                  
             
                   <p 
                     class="Label">
@@ -217,8 +216,10 @@ dataLayer.push({
                       Previous
                   </button>
                   <button 
-                    class="btn-shape btn-main btn-spacing" 
-                    onclick="stepper1.next()">
+                    class="btn-shape btn-main btn-spacing next disabled" 
+                    id="to-second-step"
+                    onclick="stepper1.next()"
+                    disabled="true">
                       Next
                   </button>
                 </div>
@@ -229,7 +230,9 @@ dataLayer.push({
             <!-- Third Step - Datalayer Variable -->
             <div id="test-l-3" class="content">
               
-              <p class="text-center">Datalayer Variables</p>
+              <p class="text-center">
+                Datalayer Variables
+              </p>
 
 
               <div class="container" id="MainContainer"></div>
@@ -244,7 +247,7 @@ dataLayer.push({
                   id="addMore" 
                   class="addMore datadeclare btn-primary-gradi" 
                   style="display: inline;visibility:hidden">
-                  + Add another
+                  + Add key value
                 </button>
                 <button 
                   type="button" 
@@ -264,8 +267,10 @@ dataLayer.push({
                       Previous
                   </button>
                   <button 
-                    class="btn-shape btn-main btn-spacing" 
-                    onclick="stepper1.next()">
+                    class="btn-shape btn-main btn-spacing next disabled" 
+                    onclick="stepper1.next()"
+                    disabled="true"
+                    id="to-third-step">
                       Next
                   </button>
                 </div>
@@ -517,7 +522,7 @@ dataLayer.push({
                       Previous
                   </button>
                   <button 
-                    class="nestedparam btn-shape btn-main btn-spacing" 
+                    class="btn-shape btn-main btn-spacing" 
                     onclick="createExportTable()">
                     Download Excel
                   </button>
@@ -581,6 +586,33 @@ dataLayer.push({
   <script>
 
     $(document).ready(function() {
+
+      showHelp();
+
+      function showHelp(){
+
+        let $btn = $(".openSidemodal");
+
+        $btn.on("click",function(){
+
+          fetch("./help.json") 
+            .then(response => response.json()) 
+            .then(data => {
+            
+            let key = this.id;
+
+            let value = data[key];
+
+            document.getElementById("Help-text").textContent = value;
+
+          })
+          .catch(error => console.error("Error al cargar el archivo JSON:", error));
+
+        });
+
+      }
+
+
       // Abrir sidemodal
       $(".openSidemodal").click(function() {
         $("#sidemodal").width("100%");
@@ -591,7 +623,7 @@ dataLayer.push({
       // Cerrar sidemodal
       function closeSidemodal() {
         $("#sidemodal").width("0");
-        $("#sidemodal-content").css("right", "-320px"); /* Cambiado de "left" a "right" */
+        $("#sidemodal-content").css("right", "-420px"); /* Cambiado de "left" a "right" */
         $("#sidemodal-overlay").hide(); /* Ocultar overlay */
       }
 
@@ -603,9 +635,58 @@ dataLayer.push({
           closeSidemodal();
         }
       });
+
+
+      // Btns Validate
+      $('.datalayer-type').on('change',function(e){
+
+        let $secondStep = $('#to-second-step');
+
+        $secondStep.removeClass('disabled');
+        $secondStep.removeAttr('disabled');
+
+        
+        if($(this).val() == 'select'){
+          
+          $secondStep.addClass('disabled');
+          $secondStep.attr('disabled','true');
+
+        }
+
+      });
+
+
+      $(document.body).on("keypress", "#key", function (event) {
+        
+        let $thirStep = $('#to-third-step');
+
+        $thirStep.removeClass('disabled');
+        $thirStep.removeAttr('disabled');
+
+      });
+
+      if($('#key').val() == ''){
+        
+        let $thirStep = $('#to-third-step');
+
+        $thirStep.addClass('disabled');
+        $thirStep.attr('disabled','true');
+
+      }
+
+
+      $('#to-third-step').on('click',function(e){
+        $('#dataGenerate').click();
+      })
+
+
     });
 
+
+    
+
     /*
+    
     introJs().setOptions({
       steps:[
         {

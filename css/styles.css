@@ -22,9 +22,14 @@ header {
   color:white;
 }
 
+.disabled {
+  cursor:not-allowed;
+  background-color:#b9b9b9;
+}
+
 .Stepper-btns {
   position: fixed;
-  top: 60%;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -101,13 +106,18 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .nestedparam {
+  color:black;
   border: 1px solid black;
   display: block;
   border-radius: 25px;
-  padding: 5px;
+  padding: 10px 55px;
   text-align: center;
   margin: 10px 0;
   cursor: pointer;
+}
+
+.input-group {
+  margin:2% 0;
 }
 
 .keyvaluenested {
@@ -242,12 +252,12 @@ button, input[type="submit"], input[type="reset"] {
 
 #sidemodal-content {
   position: fixed;
-  width: 320px;
+  width: 420px;
   height: 100%;
   background-color: #fefefe;
   padding: 20px;
   top: 0;
-  right: -320px; /* Cambiado de "left" a "right" */
+  right: -420px; 
   transition: 0.5s;
   -webkit-box-shadow: -12px -3px 13px 3px rgba(235,235,235,1);
   -moz-box-shadow: -12px -3px 13px 3px rgba(235,235,235,1);
@@ -261,4 +271,8 @@ button, input[type="submit"], input[type="reset"] {
   font-size: 28px;
   cursor: pointer;
   color: black;
+}
+
+#dataGenerate {
+  display:none!important;
 }
