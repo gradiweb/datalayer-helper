@@ -266,13 +266,24 @@ button, input[type="submit"], input[type="reset"] {
 
 #closeSidemodal {
   position: absolute;
-  top: 20px;
+  top: 0px;
   right: 10px;
-  font-size: 28px;
+  font-size: 35px;
   cursor: pointer;
   color: black;
 }
 
 #dataGenerate {
   display:none!important;
+}
+
+#Help-text {
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+#Help-text h2 {
+  margin: 1rem 0;
+  padding: 0;
+  line-height: 2rem;
 }

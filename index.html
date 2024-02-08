@@ -568,13 +568,11 @@ dataLayer.push({
   </div>
 </div>
 
-  <!-- Overlay para cerrar el sidemodal haciendo clic fuera de él -->
-<div id="sidemodal-overlay"></div>
 
 <!-- Sidemodal -->
 <div id="sidemodal">
   <div id="sidemodal-content">
-    <span id="closeSidemodal">&times;</span>
+    <a id="closeSidemodal">&times;</a>
     <p id="Help-text"></p>
   </div>
 </div>
@@ -586,6 +584,8 @@ dataLayer.push({
   <script>
 
     $(document).ready(function() {
+
+      sideModal()
 
       showHelp();
 
@@ -612,7 +612,7 @@ dataLayer.push({
               let value = data[key];
               
               // Renderizar el valor en un elemento HTML
-              document.getElementById("Help-text").textContent = value;
+              document.getElementById("Help-text").innerHTML = value;
             })
             .catch(error => {
               console.error('Error al cargar el archivo JSON:', error);
@@ -622,31 +622,33 @@ dataLayer.push({
 
       }
 
+      function sideModal(){
+        // Abrir sidemodal
+        $(".openSidemodal").click(function() {
+          $("#sidemodal").width("100%");
+          $("#sidemodal-content").css("right", "0");
+          $("#sidemodal-overlay").show();
+        });
 
-      // Abrir sidemodal
-      $(".openSidemodal").click(function() {
-        $("#sidemodal").width("100%");
-        $("#sidemodal-content").css("right", "0"); /* Cambiado de "left" a "right" */
-        $("#sidemodal-overlay").show(); /* Mostrar overlay */
-      });
+        $(document).keyup(function(e) {
+          if (e.key === "Escape") {
+            closeSidemodal();
+          }
+        });
 
-      // Cerrar sidemodal
-      function closeSidemodal() {
-        $("#sidemodal").width("0");
-        $("#sidemodal-content").css("right", "-420px"); /* Cambiado de "left" a "right" */
-        $("#sidemodal-overlay").hide(); /* Ocultar overlay */
-      }
 
-      $("#closeSidemodal, #sidemodal-overlay").click(closeSidemodal);
-
-      // Cerrar sidemodal también al presionar la tecla Escape
-      $(document).keyup(function(e) {
-        if (e.key === "Escape") {
+        $("#closeSidemodal").click(function() {
           closeSidemodal();
+        });
+
+        function closeSidemodal() {
+          $("#sidemodal").width("0");
+          $("#sidemodal-content").css("right", "-420px");
+          $("#sidemodal-overlay").hide();
         }
-      });
 
-
+      }
+      
       // Btns Validate
       $('.datalayer-type').on('change',function(e){
 
