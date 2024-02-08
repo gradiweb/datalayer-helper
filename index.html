@@ -595,18 +595,28 @@ dataLayer.push({
 
         $btn.on("click",function(){
 
-          fetch("./help.json") 
-            .then(response => response.json()) 
+          fetch('https://gradiweb.github.io/datalayer-helper/js/help.json')
+            .then(response => {
+              // Verificar si la respuesta es exitosa (status 200)
+              if (!response.ok) {
+                throw new Error('No se pudo cargar el archivo JSON.');
+              }
+              // Parsear la respuesta como un objeto JSON
+              return response.json();
+            })
             .then(data => {
-            
-            let key = this.id;
-
-            let value = data[key];
-
-            document.getElementById("Help-text").textContent = value;
-
-          })
-          .catch(error => console.error("Error al cargar el archivo JSON:", error));
+              // Obtener el valor del botón como clave para buscar en el JSON
+              let key = this.id;
+              
+              // Obtener el valor asociado a la clave
+              let value = data[key];
+              
+              // Renderizar el valor en un elemento HTML
+              document.getElementById("Help-text").textContent = value;
+            })
+            .catch(error => {
+              console.error('Error al cargar el archivo JSON:', error);
+            });
 
         });
 
