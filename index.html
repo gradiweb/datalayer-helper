@@ -172,7 +172,6 @@ dataLayer.push({
                         id="datalayer-details-help">
                         <img src="./Images/information.gif" alt="">
                       </a>
-                      
                     </div>
                   </p>
                   <select class="form-select selector datalayer-type" id ="dldropdown" name="dropdown" style="margin-bottom:8px;display: inline">
@@ -232,6 +231,14 @@ dataLayer.push({
               
               <p class="text-center">
                 Datalayer Variables
+                <div class="tooltip-container">
+                  <a 
+                    href="#" 
+                    class="openSidemodal"
+                    id="datalayer-variables-help">
+                    <img src="./Images/information.gif" alt="">
+                  </a>
+                </div>
               </p>
 
 
@@ -573,6 +580,9 @@ dataLayer.push({
 <div id="sidemodal">
   <div id="sidemodal-content">
     <a id="closeSidemodal">&times;</a>
+    <div id="loader" style="display: none;">
+      <img src="./Images/loader.gif" alt="">
+    </div>
     <p id="Help-text"></p>
   </div>
 </div>
@@ -595,6 +605,8 @@ dataLayer.push({
 
         $btn.on("click",function(){
 
+          document.getElementById("loader").style.display = "block";
+          
           fetch('https://gradiweb.github.io/datalayer-helper/js/help.json')
             .then(response => {
               // Verificar si la respuesta es exitosa (status 200)
@@ -611,11 +623,13 @@ dataLayer.push({
               // Obtener el valor asociado a la clave
               let value = data[key];
               
-              // Renderizar el valor en un elemento HTML
               document.getElementById("Help-text").innerHTML = value;
+
+              document.getElementById("loader").style.display = "none";
             })
             .catch(error => {
               console.error('Error al cargar el archivo JSON:', error);
+              document.getElementById("loader").style.display = "none";
             });
 
         });

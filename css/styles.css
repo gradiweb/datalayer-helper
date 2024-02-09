@@ -279,11 +279,21 @@ button, input[type="submit"], input[type="reset"] {
 
 #Help-text {
   overflow-y: auto;
-  max-height: 500px;
+  height: 100%;
 }
 
 #Help-text h2 {
+  font-size:1.5rem;
   margin: 1rem 0;
   padding: 0;
   line-height: 2rem;
+}
+
+#loader {
+  display: none;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%)translateX(-50%);
+  text-align: center;
 }
