@@ -231,15 +231,16 @@ dataLayer.push({
               
               <p class="text-center">
                 Datalayer Variables
-                <div class="tooltip-container">
-                  <a 
-                    href="#" 
-                    class="openSidemodal"
-                    id="datalayer-variables-help">
-                    <img src="./Images/information.gif" alt="">
-                  </a>
-                </div>
               </p>
+
+              <div class="tooltip-container">
+                <a 
+                  href="#" 
+                  class="openSidemodal"
+                  id="datalayer-variables-help">
+                  <img src="./Images/information.gif" alt="">
+                </a>
+              </div>
 
 
               <div class="container" id="MainContainer"></div>
@@ -604,6 +605,8 @@ dataLayer.push({
         let $btn = $(".openSidemodal");
 
         $btn.on("click",function(){
+
+          document.getElementById("Help-text").innerHTML = "";
 
           document.getElementById("loader").style.display = "block";
           
