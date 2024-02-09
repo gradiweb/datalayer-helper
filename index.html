@@ -394,7 +394,7 @@ dataLayer.push({
               <div id="datalayerecommevent" class="container-fluid datalayer datalayerecommevent" style="padding: 0 2px 2px 0;display: none;">
               <div id="even_det" style="display: flex;">
               <div style="height:max-content; padding-right:16px">
-              <h3>
+              <p class="Label">
                 Event Details
                 <div class="tooltip-container">
                   <a 
@@ -404,7 +404,7 @@ dataLayer.push({
                     <img src="./Images/information.gif" alt="">
                   </a>
                 </div>
-              </h3>
+              </p>
               </div>
               <div style="height:max-content;margin-top:8px" >
               <select name="configType" id="Configs" class="form-select">
@@ -613,41 +613,30 @@ dataLayer.push({
 
       function showHelp(){
 
-        let $btn = $(".openSidemodal");
+        $(".openSidemodal").each(function() {
+          $(this).on("click", function() {
+              document.getElementById("Help-text").innerHTML = "";
+              document.getElementById("loader").style.display = "block";
 
-        $btn.on("click",function(){
-
-          document.getElementById("Help-text").innerHTML = "";
-
-          document.getElementById("loader").style.display = "block";
-          
-          fetch('https://gradiweb.github.io/datalayer-helper/js/help.json')
-            .then(response => {
-              // Verificar si la respuesta es exitosa (status 200)
-              if (!response.ok) {
-                throw new Error('No se pudo cargar el archivo JSON.');
-              }
-              // Parsear la respuesta como un objeto JSON
-              return response.json();
-            })
-            .then(data => {
-              // Obtener el valor del botón como clave para buscar en el JSON
-              let key = this.id;
-              
-              // Obtener el valor asociado a la clave
-              let value = data[key];
-              
-              document.getElementById("Help-text").innerHTML = value;
-
-              document.getElementById("loader").style.display = "none";
-            })
-            .catch(error => {
-              console.error('Error al cargar el archivo JSON:', error);
-              document.getElementById("loader").style.display = "none";
-            });
-
+              fetch('https://gradiweb.github.io/datalayer-helper/js/help.json')
+                .then(response => {
+                      if (!response.ok) {
+                          throw new Error('Failed to load JSON file.');
+                      }
+                      return response.json();
+                  })
+                  .then(data => {
+                      let key = this.id;
+                      let value = data[key];
+                      document.getElementById("Help-text").innerHTML = value;
+                      document.getElementById("loader").style.display = "none";
+                  })
+                  .catch(error => {
+                      console.error('Error loading JSON file:', error);
+                      document.getElementById("loader").style.display = "none";
+                  });
+          });
         });
-
       }
 
       function sideModal(){
@@ -721,12 +710,7 @@ dataLayer.push({
 
 
     });
-
-
-    
-
-    /*
-    
+  
     introJs().setOptions({
       steps:[
         {
@@ -751,7 +735,7 @@ dataLayer.push({
         }
       ]
     }).start();
-    */
+ 
 
     
   </script>

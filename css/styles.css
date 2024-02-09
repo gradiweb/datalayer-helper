@@ -289,6 +289,13 @@ button, input[type="submit"], input[type="reset"] {
   line-height: 2rem;
 }
 
+#Help-text h3 {
+  font-size:1.2rem;
+  margin: 1rem 0;
+  padding: 0;
+  line-height: 2rem;
+}
+
 #loader {
   display: none;
   position: relative;
